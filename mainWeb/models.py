@@ -25,9 +25,9 @@ class UnknowNameBoard(models.Model):
     date = models.DateField(null=False) # 날짜
     nick_name = models.CharField(max_length=30,blank=False) # 별명
 
- class ProffessorData(models.Model):
+class ProffessorData(models.Model):
     name = models.CharField(max_length=100, blank=False)
-    profile_image = ImageField(upload_to=get_image_path, blank=True, null=True)
+    profile_image = models.ImageField(upload_to=get_image_path, blank=True, null=True)
     email = models.CharField(max_length=40, blank=True) # 메일
 
     #메시지 만드는 url 나중에 구현하면서 할꺼 귀찮;;
