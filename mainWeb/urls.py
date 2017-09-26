@@ -11,5 +11,4 @@ urlpatterns = [
     url(r'^jokbo/', views.jokbo, name='jokbo'),
     url(r'^report/', views.report, name='report'),
     url(r'^mypage/', views.mypage, name='mypage'),
-
 ]
