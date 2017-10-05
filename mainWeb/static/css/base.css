@@ -17,16 +17,19 @@
     list-style-type: none;
     margin : 0px;
     padding: 0px;
+    display: flex;
   }
+
   #topMenu ul li{
     color: white;
     background-color: grey;
-    float: left;
     line-height: 30px;
+
     vertical-align: middle;
     text-align: center;
     position: relative;
   }
+
   .menuLink, .submenuLink{
     text-decoration:none;
     display: block;
@@ -36,10 +39,11 @@
     font-weight: bold;
     font-family: "Trebuchet MS", Dotum, Arial;
   }
+
   .menuLink{
     color:white;
-
   }
+
   .topMenuLi:hover .menuLink {
     color: pink;
     background-color: #4d4d4d;
@@ -50,15 +54,17 @@
 
     margin-top: -1px;
   }
+
   .longLink{
     width: 190px;
   }
+
   .submenu{
-    position: absolute;
+    display: flex;
+    
     height: 0px;
     overflow:hidden;
     transition: height .2s;
-
   }
   .topMenuLi:hover .submenu{
     height: 93px;
