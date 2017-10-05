@@ -55,19 +55,27 @@
     margin-top: -1px;
   }
 
-  .longLink{
-    width: 190px;
-  }
+  /*.longLink{
+    width: 100%;
+  }*/
 
   .submenu{
+    position: absolute;
     display: flex;
-    
+    flex-flow: row;
+    flex-grow: 3;
+    flex-wrap: wrap;
     height: 0px;
     overflow:hidden;
     transition: height .2s;
   }
+
+  .submenu li{
+    width: auto;
+  }
+
   .topMenuLi:hover .submenu{
-    height: 93px;
+    height: auto;
   }
   .submenuLink:hover{
     color: pink;
