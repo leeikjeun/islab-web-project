@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+  <title>경하하하하</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+
+  <header>
+    <div class="page-header">
+      <h1><a href="#">사이좋은 425</a></h1>
+    </div>
+      <nav id="topMenu">
+        <ul>
+          <li class ="topMenuLi">
+            <a class="menulink" href="#">교수님 소개</a>
+            <ul class="submenu">
+              <li><a class="submenuLink longlink" href="#">이상준교수님</a></li>
+              <li><a class="submenuLink longlink" href="#">김장형교수님</a></li>
+              <li><a class="submenuLink longlink" href="#">안기중교수님</a></li>
+              <li><a class="submenuLink longlink" href="#">곽호영교수님</a></li>
+              <li><a class="submenuLink longlink" href="#">변상용교수님</a></li>
+              <li><a class="submenuLink longlink" href="#">변영철교수님</a></li>
+              <li><a class="submenuLink longlink" href="#">송왕철교수님</a></li>
+              <li><a class="submenuLink longlink" href="#">김도현교수님</a></li>
+            </ul>
+          </li>
+
+          <li class="topMenuLi">
+            <a class="menulink" href="#">연구실 소개</a>
+            <ul class="submenu">
+             <li><a class="submenuLink longLink">연구원 소개</a></li>
+             <li><a class="submenuLink longLink"> asdfasdf</a></li>
+            </ul>
+          </li>
+
+          <li class="topMenuLi">
+            <a class="menulink" href="#">익명게시판</a>
+          </li>
+        </ul>
+      </nav>
+  </header>
+  <div class="content container">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <footer style=" border: 1px solid grey">
+    example@gmail.com
+  </footer>
+</body>
+</html>
