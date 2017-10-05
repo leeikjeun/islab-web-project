@@ -27,3 +27,6 @@ def report(request):
 
 def mypage(request):
     return render(request, 'mainWeb/mypage/mypage.html', {})
+
+def test(request):
+    return render(request, 'mainWeb/dfdf.html', {})
