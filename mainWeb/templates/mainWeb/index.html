@@ -1,5 +1,18 @@
 {% extends 'mainWeb/base.html' %}
+{% load staticfiles %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+{% endblock %}
+
 
 {% block content %}
-<h1>첫화면</h1>
+<body>
+  <center>
+    <img src="static/img/main.jpeg"  alt="">
+  </center>
+<button type="button" class="user">회원 전용</button>
+<button type="button" class="guest">비회원 전용</button>
+</body>
+
 {% endblock %}
