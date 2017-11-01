@@ -87,17 +87,3 @@
   opacity: 1;
   z-index: 1;
 }
-
-.photo {
-  display: inline-block;
-  width: 74%;
-  height:390px;
-  border-bottom: 1px solid #ddd;
-
-}
-.photo img{
-  padding: 30px;
-  display: block;
-  width: 800px;
-  height:550px;
-}
