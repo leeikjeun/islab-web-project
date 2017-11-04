@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import UnknowNameBoard
 
 # Create your views here.
 def index(request):
@@ -11,7 +12,8 @@ def Profe_intro(request):
     return render(request, 'mainWeb/Profe_intro/profe_intro.html', {})
 
 def Unknown_post(request):
-    return render(request, 'mainWeb/Unknown_post/Unknown_post.html', {})
+    posts = UnknowNameBoard.objects.all();
+    return render(request, 'mainWeb/Unknown_post/Unknown_post.html', {'posts' : posts})
 
 def Profe_info(request):
     return render(request, 'mainWeb/Profe_info/Profe_info.html', {})
@@ -30,3 +32,6 @@ def mypage(request):
 
 def test(request):
     return render(request, 'mainWeb/dfdf.html', {})
+
+def leesangjun(request):
+    return render(request, 'mainWeb/Profe_info/leesangjun.html', {})

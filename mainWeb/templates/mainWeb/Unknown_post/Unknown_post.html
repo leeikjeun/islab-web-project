@@ -1,5 +1,10 @@
 {% extends 'mainWeb/base.html' %}
 
 {% block content %}
-<h1>익명 게시판</h1>
-{% endblock %}
+{% for post in posts %}
+  <div class="post">
+      <h1><a href="#">{{ post.title }}</a></h1>
+      <p>{{ post.content|linebreaksbr }}</p>
+      <a href="#">Comments: </a>
+  </div>
+{% endfor %}{% endblock %}
