@@ -7,7 +7,6 @@ urlpatterns = [
     url(r'^profeintro/', views.Profe_intro, name='Profe_intro'),
     url(r'^unkownpost/', views.Unknown_post, name='Unknown_post'),
     url(r'^profeinfo/', views.Profe_info, name='Profe_info'),
-    url(r'^profeinfo/leesangjun/', views.leesangjun, name='leesangjun'),
     url(r'^ggultip/', views.GGul_tip, name='GGul_tip'),
     url(r'^jokbo/', views.jokbo, name='jokbo'),
     url(r'^report/', views.report, name='report'),

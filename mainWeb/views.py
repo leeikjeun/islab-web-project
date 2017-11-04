@@ -32,6 +32,3 @@ def mypage(request):
 
 def test(request):
     return render(request, 'mainWeb/dfdf.html', {})
-
-def leesangjun(request):
-    return render(request, 'mainWeb/Profe_info/leesangjun.html', {})
