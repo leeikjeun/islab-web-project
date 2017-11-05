@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import UnknowNameBoard
 
 # Create your views here.
@@ -14,6 +14,10 @@ def Profe_intro(request):
 def Unknown_post(request):
     posts = UnknowNameBoard.objects.all();
     return render(request, 'mainWeb/Unknown_post/Unknown_post.html', {'posts' : posts})
+
+def Unknown_post_detail(request, pk):
+    post = get_object_or_404(UnknowNameBoard, pk = pk)
+    return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {'post' : post})
 
 def Profe_info(request):
     return render(request, 'mainWeb/Profe_info/Profe_info.html', {})

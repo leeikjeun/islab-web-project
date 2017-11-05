@@ -3,10 +3,13 @@
 {% block content %}
 {% for post in posts %}
   <div class="post">
-      <span> 게시판 번호 : {{post.board_num}}</span>
-      <h1><a href="#">{{ post.title }}</a></h1>
-      <p>{{ post.content|linebreaksbr }}</p>
-      <a href="#">Comments: </a>
+      <span> 게시판 번호 : {{post.pk}}</span>
+      <h1><a href="{% url 'Unknown_post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+      <p>{{ post. }}</p>
+      <a href="#">Comments: 댓글 개수 </a>
+      <span>게시일 {{ post.date }}</span>
+      <span>닉네임 {{ post.nick_name }}</span>
 
   </div>
-{% endfor %}{% endblock %}
+{% endfor %}
+{% endblock %}
