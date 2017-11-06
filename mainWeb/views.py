@@ -24,7 +24,6 @@ def Profe_info(request):
     return render(request, 'mainWeb/Profe_info/Profe_info.html', {'posts' : posts})
 
 def GGul_tip(request, pk):
-    post =
     return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {})
 
 def jokbo(request):

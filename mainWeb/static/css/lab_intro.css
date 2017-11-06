@@ -32,10 +32,6 @@
   color : orange;
 }
 
-.lab-explain {
-  border-bottom: 1px solid pink;
-}
-
 .lab-content-second {
   display: flex;
   justify-content: center;
