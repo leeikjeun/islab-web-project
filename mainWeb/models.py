@@ -29,6 +29,14 @@ class ProffessorData(models.Model):
     name = models.CharField(max_length=100, blank=False)
     profile_image = models.ImageField(upload_to=get_image_path, blank=True, null=True)
     email = models.CharField(max_length=40, blank=True) # 메일
+    
+class Proffessorcontent(models.Model) :
+    post = models.ForeignKey('mainWeb.ProffessorData', related_name='contents')
+    category = models.CharField(max_length=200)
+    content = models.TextField()
+    title = models.CharField(max_length = 200)
+    date = models.DateTimeField(default = timezone.now)
+    link = models.TextField(blank = True)
 
     #메시지 만드는 url 나중에 구현하면서 할꺼 귀찮;;
     #https://docs.djangoproject.com/ko/1.11/ref/contrib/messages/

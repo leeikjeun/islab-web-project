@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import UnknowNameBoard
+from .models import UnknowNameBoard, ProffessorData
 
 # Create your views here.
 def index(request):
@@ -20,9 +20,11 @@ def Unknown_post_detail(request, pk):
     return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {'post' : post})
 
 def Profe_info(request):
-    return render(request, 'mainWeb/Profe_info/Profe_info.html', {})
+    posts = ProffessorData.objects.all();
+    return render(request, 'mainWeb/Profe_info/Profe_info.html', {'posts' : posts})
 
-def GGul_tip(request):
+def GGul_tip(request, pk):
+    post =
     return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {})
 
 def jokbo(request):
