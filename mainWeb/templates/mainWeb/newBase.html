@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>좋은425</title>
+
+    <style>
+        /* reset */
+        html {
+            font-size: 12px;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
+            margin: 0;
+            padding: 0
+        }
+
+        fieldset, img {
+            border: 0 none
+        }
+
+        dl, ul, ol, menu, li {
+            list-style: none
+        }
+
+        blockquote, q {
+            quotes: none
+        }
+
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: '';
+            content: none
+        }
+
+        input, select, textarea, button {
+            vertical-align: middle
+        }
+
+        button {
+            border: 0 none;
+            background-color: transparent;
+            cursor: pointer
+        }
+
+        body {
+            background: #fff
+        }
+
+        body, th, td, input, select, textarea, button {
+            font-size: 1rem;
+            line-height: 1.5;
+            font-family: '돋움', dotum, sans-serif;
+            color: #333
+        }
+
+        /* color값은 디자인가이드에 맞게사용 */
+        a {
+            color: #333;
+            text-decoration: none
+        }
+
+        a:active, a:hover {
+            text-decoration: underline
+        }
+
+        address, caption, cite, code, dfn, em, var {
+            font-style: normal;
+            font-weight: normal
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        /* base */
+        #wrap {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        aside {
+            float: left;
+            width: 25%;
+            height:;
+            border-left: 1px solid #CCC;
+        }
+
+        aside::after {
+            content: '';
+            display: block;
+            clear: both;
+            visibility: hidden;
+        }
+
+        aside > div {
+            width: 100%;
+        }
+
+        aside > div#title {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid #CCC;
+        }
+
+        aside > div#title > h1 {
+            font-size: 3rem;
+            color: #3669CF;
+            text-align: center;
+        }
+
+        aside > div#loginForm {
+            padding: 0.833rem 0;
+            border-bottom: 1px solid #CCC;
+            text-align: center;
+        }
+
+        aside > div#loginForm > form > dl > dd {
+            width: 100%;
+            padding: 0.25rem;
+        }
+
+        aside > div#loginForm > form > dl > dd > span {
+            width: 25%;
+        }
+
+        aside > div#loginForm > form > dl > dd > input[type='text']
+        aside > div#loginForm > form > dl > dd > input[type='password'] {
+            width: calc(75% - 5px);
+            margin-left: 5px;
+            border: none;
+            border-bottom: 1px solid #CCC;
+            background: transparent;
+        }
+
+        aside > div#loginForm > form > dl > dd > input[type='submit'] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            background: #000;
+            font-size: 1.25rem;
+            text-align: center;
+            color: #FFF;
+        }
+
+        aside > div#loginForm > dl.user_info {
+
+        }
+
+        aside > div#loginForm > dl.user_info > dd.user_photo {
+
+        }
+
+        aside > div#loginForm > dl.user_info > dd.user_photo > span {
+            border: 1px solid #CCC;
+            border-radius: 50%;
+            background-size: 100% 100%;
+            background: url('') center center;
+        }
+
+        aside > div#loginForm > dl.user_info > dd.user_photo > span > img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <aside>
+        <!--left-->
+        <div id="title">
+            <h1>좋은425</h1>
+        </div>
+        <div id="loginForm">
+            <!--if !login-->
+            <form>
+                <dl>
+                    <dd>
+                        <span>ID :</span>
+                        <input type="text" name="user-id" class="user-id">
+                    </dd>
+                    <dd>
+                        <span>PW :</span>
+                        <input type="password" name="user-pw" class="user-pw">
+                    </dd>
+                    <dd>
+                        <input type="submit" value="Login" class="btn_login">
+                    </dd>
+                    <dd>
+                        <a href="#">회원가입</a> | <a href="#">아이디/비밀번호찾기</a>
+                    </dd>
+                </dl>
+            </form>
+            <!--else-->
+            <dl class="user_info">
+                <dd class="user_photo">
+                        <span>
+                            <!--if !empty photo-->
+                            <img src="">
+                            <!--endif-->
+                        </span>
+                </dd>
+
+                <dd>
+                    <dl>
+                        <dt>
+                            <!--이름 학번-->
+                        </dt>
+                        <dd>
+                            <!--btns-->
+                        </dd>
+                        <dd>
+                            <!--logout btn-->
+                        </dd>
+                    </dl>
+                </dd>
+            </dl>
+            <!--endif-->
+        </div>
+        <nav>
+            <!--menu-->
+            <dl>
+                <dd>
+                    <dl>
+                        <!--submenu-->
+                        <dd></dd>
+                        <dd></dd>
+                        <dd></dd>
+                    </dl>
+                </dd>
+                <dd></dd>
+                <dd></dd>
+                <dd></dd>
+                <dd></dd>
+            </dl>
+        </nav>
+    </aside>
+
+    <div id="content">
+
+    </div>
+</div>
+</body>
+</html>
