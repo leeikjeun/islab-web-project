@@ -1,5 +1,5 @@
 *{
-  margin: 0px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -8,15 +8,14 @@
   background-color: white;
   display: flex;
   align-items: center;
-  margin: 10px;
-  border: 1px solid pink;
-  color: pink;
+  border: 1px solid #eaeaea;
   padding : 5px 20px;
   border-radius: 20px;
 }
 
 .lab-title h1 {
-  color: pink;
+  color: #2457BD;
+  font-size: 2rem;
   text-decoration: none;
 }
 
@@ -38,7 +37,7 @@
   align-items: center;
   height: 300px;
   margin: 10px 5%;
-  border: 1px solid pink;
+  border: 1px solid #eaeaea;
   padding : 5px 20px;
   border-radius: 20px;
 }
