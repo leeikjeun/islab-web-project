@@ -3,175 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <title>좋은425</title>
-
     <style>
-        /* reset */
-        html {
-            font-size: 12px;
-        }
+    /* reset */
+    html {
+        font-size: 12px;
+    }
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-        }
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
-            margin: 0;
-            padding: 0
-        }
+    body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
+        margin: 0;
+        padding: 0
+    }
 
-        fieldset, img {
-            border: 0 none
-        }
+    fieldset, img {
+        border: 0 none
+    }
 
-        dl, ul, ol, menu, li {
-            list-style: none
-        }
+    dl, ul, ol, menu, li {
+        list-style: none
+    }
 
-        blockquote, q {
-            quotes: none
-        }
+    blockquote, q {
+        quotes: none
+    }
 
-        blockquote:before, blockquote:after, q:before, q:after {
-            content: '';
-            content: none
-        }
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none
+    }
 
-        input, select, textarea, button {
-            vertical-align: middle
-        }
+    input, select, textarea, button {
+        vertical-align: middle
+    }
 
-        button {
-            border: 0 none;
-            background-color: transparent;
-            cursor: pointer
-        }
+    button {
+        border: 0 none;
+        background-color: transparent;
+        cursor: pointer
+    }
 
-        body {
-            background: #fff
-        }
+    body {
+        background: #fff
+    }
 
-        body, th, td, input, select, textarea, button {
-            font-size: 1rem;
-            line-height: 1.5;
-            font-family: '돋움', dotum, sans-serif;
-            color: #333
-        }
+    body, th, td, input, select, textarea, button {
+        font-size: 1rem;
+        line-height: 1.5;
+        font-family: '돋움', dotum, sans-serif;
+        color: #333
+    }
 
-        /* color값은 디자인가이드에 맞게사용 */
-        a {
-            color: #333;
-            text-decoration: none
-        }
+    /* color값은 디자인가이드에 맞게사용 */
+    a {
+        color: #333;
+        text-decoration: none
+    }
 
-        a:active, a:hover {
-            text-decoration: underline
-        }
+    a:active, a:hover {
+        text-decoration: underline
+    }
 
-        address, caption, cite, code, dfn, em, var {
-            font-style: normal;
-            font-weight: normal
-        }
+    address, caption, cite, code, dfn, em, var {
+        font-style: normal;
+        font-weight: normal
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+        box-sizing: border-box;
+    }
 
-        table {
-            border-collapse: collapse;
-        }
+    table {
+        border-collapse: collapse;
+    }
 
-        /* base */
-        #wrap {
-            width: 1024px;
-            margin: 0 auto;
-        }
+    /* base */
+    #wrap {
+        width: 1024px;
+        margin: 0 auto;
+    }
 
-        aside {
-            float: left;
-            width: 25%;
-            height:;
-            border-left: 1px solid #CCC;
-        }
+    aside {
+        float: left;
+        width: 25%;
+        height:;
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+    }
 
-        aside::after {
-            content: '';
-            display: block;
-            clear: both;
-            visibility: hidden;
-        }
+    aside::after {
+        content: '';
+        display: block;
+        clear: both;
+        visibility: hidden;
+    }
 
-        aside > div {
-            width: 100%;
-        }
+    aside > div {
+        width: 100%;
+    }
 
-        aside > div#title {
-            padding: 2.5rem 0;
-            border-bottom: 1px solid #CCC;
-        }
+    aside > div#title {
+        padding: 2.5rem 0;
+        border-bottom: 1px solid #000;
+    }
 
-        aside > div#title > h1 {
-            font-size: 3rem;
-            color: #3669CF;
-            text-align: center;
-        }
+    aside > div#title > h1 {
+        font-size: 3rem;
+        color: #2457BD;
+        text-align: center;
+    }
 
-        aside > div#loginForm {
-            padding: 0.833rem 0;
-            border-bottom: 1px solid #CCC;
-            text-align: center;
-        }
+    aside > div#loginForm {
+        padding: 0.833rem 0;
+        border-bottom: 1px solid #000;
+        text-align: center;
+    }
 
-        aside > div#loginForm > form > dl > dd {
-            width: 100%;
-            padding: 0.25rem;
-        }
+    aside > div#loginForm > form > dl > dd {
+        width: 100%;
+        padding: 0.25rem;
+    }
 
-        aside > div#loginForm > form > dl > dd > span {
-            width: 25%;
-        }
+    aside > div#loginForm > form > dl > dd > span {
+        width: 25%;
+    }
 
-        aside > div#loginForm > form > dl > dd > input[type='text']
-        aside > div#loginForm > form > dl > dd > input[type='password'] {
-            width: calc(75% - 5px);
-            margin-left: 5px;
-            border: none;
-            border-bottom: 1px solid #CCC;
-            background: transparent;
-        }
+    aside > div#loginForm > form > dl > dd > input[type='text']
+    aside > div#loginForm > form > dl > dd > input[type='password'] {
+        width: calc(75% - 5px);
+        margin-left: 5px;
+        border: none;
+        border-bottom: 1px solid #CCC;
+        background: transparent;
+    }
 
-        aside > div#loginForm > form > dl > dd > input[type='submit'] {
-            width: 100%;
-            padding: 5px;
-            border: 1px solid #CCC;
-            border-radius: 5px;
-            background: #000;
-            font-size: 1.25rem;
-            text-align: center;
-            color: #FFF;
-        }
+    aside > div#loginForm > form > dl > dd > input[type='submit'] {
+        width: 70%;
+        padding: 5px;
+        border: 1px solid #CCC;
+        border-radius: 5px;
+        background: #2457BD;
+        font-size: 1.25rem;
+        text-align: center;
+        color: #fff;
+    }
 
-        aside > div#loginForm > dl.user_info {
+    aside > div#loginForm > dl.user_info {
 
-        }
+    }
 
-        aside > div#loginForm > dl.user_info > dd.user_photo {
+    aside > div#loginForm > dl.user_info > dd.user_photo {
 
-        }
+    }
 
-        aside > div#loginForm > dl.user_info > dd.user_photo > span {
-            border: 1px solid #CCC;
-            border-radius: 50%;
-            background-size: 100% 100%;
-            background: url('') center center;
-        }
+    aside > div#loginForm > dl.user_info > dd.user_photo > span {
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        background-size: 100% 100%;
+        background: url('') center center;
+    }
 
-        aside > div#loginForm > dl.user_info > dd.user_photo > span > img {
-            width: 100%;
-            height: 100%;
-        }
+    aside > div#loginForm > dl.user_info > dd.user_photo > span > img {
+        width: 100%;
+        height: 100%;
+    }
+    nav dl{
+        padding: 3rem 1.5rem;
+        text-align: center;
+    }
+    dt > a{
+      font-size: 2rem;
+    }
+    nav dd > a{
+      color: #8C8C8C;
+      font-size: 1.5rem;
+    }
+    dt > a:hover{
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav dd > a:hover{
+      font-weight: bold;
+      text-decoration: none;
+      color: #EDD200;
+    }
     </style>
 </head>
 <body>
@@ -217,10 +237,13 @@
                             <!--이름 학번-->
                         </dt>
                         <dd>
-                            <!--btns-->
+                          <a href="#">쪽지</a>
                         </dd>
                         <dd>
-                            <!--logout btn-->
+                            <input type="submit" value="마이페이지" class="mypage"><!--btns-->
+                        </dd>
+                        <dd>
+                          <input type="submit" value="로그아웃" class="btn_logout"><!--logout btn-->
                         </dd>
                     </dl>
                 </dd>
@@ -230,18 +253,22 @@
         <nav>
             <!--menu-->
             <dl>
-                <dd>
-                    <dl>
+                <dt class="submenu"><a href="#">교수님 소개</a></dt>
+                <dt class="submenu"><a href="#">연구실 소개</a>
+                    <dd><a href="#">연구원 소개</a></dd>
+                </dt>
+                <dt class="submenu"><a href="">정보 나눔터</a>
                         <!--submenu-->
-                        <dd></dd>
-                        <dd></dd>
-                        <dd></dd>
-                    </dl>
-                </dd>
-                <dd></dd>
-                <dd></dd>
-                <dd></dd>
-                <dd></dd>
+                    <dd><a href="#">이상준교수님</a></dd>
+                    <dd><a href="#">김장형교수님</a></dd>
+                    <dd><a href="#">안기중교수님</a></dd>
+                    <dd><a href="#">변상용교수님</a></dd>
+                    <dd><a href="#">곽호영교수님</a></dd>
+                    <dd><a href="#">송왕철교수님</a></dd>
+                    <dd><a href="#">변영철교수님</a></dd>
+                    <dd><a href="#">김도현교수님</a></dd>
+                </dt>
+                <dt class="submenu"><a href="">익명 게시판</a></dt>
             </dl>
         </nav>
     </aside>

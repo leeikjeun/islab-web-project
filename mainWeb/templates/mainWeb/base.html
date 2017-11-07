@@ -7,48 +7,90 @@
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% block head %}
   {% endblock %}
-  <title>경하하하하</title>
+  <title>좋은425</title>
 </head>
 <body>
-    <div class="sidemenu">
-      <h1>좋은 425</h1>
+<div id="wrap">
+  <aside>
+      <!--left-->
+      <div id="title">
+          <h1>좋은425</h1>
+      </div>
+      <div id="loginForm">
+          <!--if !login-->
+          <form>
+              <dl>
+                  <dd>
+                      <span>ID :</span>
+                      <input type="text" name="user-id" class="user-id">
+                  </dd>
+                  <dd>
+                      <span>PW :</span>
+                      <input type="password" name="user-pw" class="user-pw">
+                  </dd>
+                  <dd>
+                      <input type="submit" value="Login" class="btn_login">
+                  </dd>
+                  <dd>
+                      <a href="#">회원가입</a> | <a href="#">아이디/비밀번호찾기</a>
+                  </dd>
+              </dl>
+          </form>
+          <!--else-->
+          <dl class="user_info">
+              <dd class="user_photo">
+                      <span>
+                          <!--if !empty photo-->
+                          <img src="">
+                          <!--endif-->
+                      </span>
+              </dd>
+
+              <dd>
+                  <dl>
+                      <dt>
+                          <!--이름 학번-->
+                      </dt>
+                      <dd>
+                        <a href="#">쪽지</a>
+                      </dd>
+                      <dd>
+                          <input type="submit" value="마이페이지" class="mypage"><!--btns-->
+                      </dd>
+                      <dd>
+                        <input type="submit" value="로그아웃" class="btn_logout"><!--logout btn-->
+                      </dd>
+                  </dl>
+              </dd>
+          </dl>
+          <!--endif-->
+      </div>
       <nav>
-        <ul>
-          <li>쪽지</li>
-          <li>마이페이지</li>
-          <li>로그아웃</li>
-        </ul>
+          <!--menu-->
+          <dl>
+              <dt class="submenu"><a href="#">교수님 소개</a></dt>
+              <dt class="submenu"><a href="#">연구실 소개</a>
+                  <dd><a href="#">연구원 소개</a></dd>
+              </dt>
+              <dt class="submenu"><a href="">정보 나눔터</a>
+                      <!--submenu-->
+                  <dd><a href="#">이상준교수님</a></dd>
+                  <dd><a href="#">김장형교수님</a></dd>
+                  <dd><a href="#">안기중교수님</a></dd>
+                  <dd><a href="#">변상용교수님</a></dd>
+                  <dd><a href="#">곽호영교수님</a></dd>
+                  <dd><a href="#">송왕철교수님</a></dd>
+                  <dd><a href="#">변영철교수님</a></dd>
+                  <dd><a href="#">김도현교수님</a></dd>
+              </dt>
+              <dt class="submenu"><a href="">익명 게시판</a></dt>
+          </dl>
       </nav>
-      <ul>
-        <li><a href="{% url 'Profe_intro' %}">교수님 소개</a></li>
-        <li>
-          <a href="{% url 'Lab_intro' %}">연구실 소개</a>
-          <ul>
-            <li><a href="#">연구원 소개</a></li>
-            <li><a href="#">위치</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="{% url 'Profe_info' %}">정보 나눔터</a>
-          <ul>
-            <li><a href="#">이상준교수님</a></li>
-            <li><a href="#">김장형교수님</a></li>
-            <li><a href="#">안기중교수님</a></li>
-            <li><a href="#">곽호영교수님</a></li>
-            <li><a href="#">변상용교수님</a></li>
-            <li><a href="#">송왕철교수님</a></li>
-            <li><a href="#">변영철교수님</a></li>
-            <li><a href="#">김도현교수님</a></li>
-          </ul>
-        </li>
-        <li><a href="{% url 'Unknown_post' %}">익명 게시판</a></li>
-      </ul>
-    </div>
-  <div class="content container">
-    {% block content %}
-    {% endblock %}
+  </aside>
+
+  <div id="content">
 
   </div>
-
+</div>
 </body>
 </html>
