@@ -1,15 +1,10 @@
-{% extends 'mainWeb/base.html' %}
+{% extends 'mainWeb/board.html' %}
 
-{% block content %}
-{% for post in posts %}
-  <div class="post">
-      <span> 게시판 번호 : {{post.pk}}</span>
-      <h1><a href="{% url 'Unknown_post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-      <p>{{ post. }}</p>
-      <a href="#">Comments: 댓글 개수 </a>
-      <span>게시일 {{ post.date }}</span>
-      <span>닉네임 {{ post.nick_name }}</span>
-
-  </div>
-{% endfor %}
+{% block list %}
+    <tr>
+        <td>1</td>
+        <td>1번 글입니다.</td>
+        <td>지원</td>
+        <td>123</td>
+    </tr>
 {% endblock %}

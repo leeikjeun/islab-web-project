@@ -12,18 +12,16 @@ def Profe_intro(request):
     return render(request, 'mainWeb/Profe_intro/profe_intro.html', {})
 
 def Unknown_post(request):
-    posts = UnknowNameBoard.objects.all();
-    return render(request, 'mainWeb/Unknown_post/Unknown_post.html', {'posts' : posts})
+    return render(request, 'mainWeb/Unknown_post/Unknown_post.html', {})
 
-def Unknown_post_detail(request, pk):
-    post = get_object_or_404(UnknowNameBoard, pk = pk)
+def Unknown_post_detail(request):
     return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {'post' : post})
 
 def Profe_info(request):
     posts = ProffessorData.objects.all();
     return render(request, 'mainWeb/Profe_info/Profe_info.html', {'posts' : posts})
 
-def GGul_tip(request, pk):
+def GGul_tip(request):
     return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {})
 
 def jokbo(request):
@@ -34,6 +32,3 @@ def report(request):
 
 def mypage(request):
     return render(request, 'mainWeb/mypage/mypage.html', {})
-
-def test(request):
-    return render(request, 'mainWeb/dfdf.html', {})

@@ -2,12 +2,6 @@
 
 {% block content %}
 <h1>교수님 정보</h1>
-{% for post in posts %}
 
-  <h2>교수님 이름 : {{ post.name }}</h2>
-  <img src="{{ post.profile_image }}" alt="#">
-  <p>이메일 : {{ post.email }}</p>
-/  <a href="{ url 'GGul_tip' , pk=post.pk }"></a>
-{% endfor %}
 
 {% endblock %}

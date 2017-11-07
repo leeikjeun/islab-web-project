@@ -81,13 +81,9 @@ WSGI_APPLICATION = 'islabWebSite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'islab_project',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST' : '127.0.0.1',
-        'PORT': '3306'
-    } #로컬에 mysql이 깔려 있어야 하고 db이름을 'islab_project' 로 해서 만들어 놓아야 합니다.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 

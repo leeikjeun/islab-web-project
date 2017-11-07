@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}?ver=1">
   {% block head %}
   {% endblock %}
   <title>좋은425</title>
@@ -37,42 +37,42 @@
               </dl>
           </form>
           <!--else-->
-          <dl class="user_info">
-              <dd class="user_photo">
-                      <span>
-                          <!--if !empty photo-->
-                          <img src="">
-                          <!--endif-->
-                      </span>
-              </dd>
-
-              <dd>
-                  <dl>
-                      <dt>
-                          <!--이름 학번-->
-                      </dt>
-                      <dd>
-                        <a href="#">쪽지</a>
-                      </dd>
-                      <dd>
-                          <input type="submit" value="마이페이지" class="mypage"><!--btns-->
-                      </dd>
-                      <dd>
-                        <input type="submit" value="로그아웃" class="btn_logout"><!--logout btn-->
-                      </dd>
-                  </dl>
-              </dd>
-          </dl>
+{#          <dl class="user_info">#}
+{#              <dd class="user_photo">#}
+{#                      <span>#}
+{#                          <!--if !empty photo-->#}
+{#                          <img src="">#}
+{#                          <!--endif-->#}
+{#                      </span>#}
+{#              </dd>#}
+{##}
+{#              <dd>#}
+{#                  <dl>#}
+{#                      <dt>#}
+{#                          <!--이름 학번-->#}
+{#                      </dt>#}
+{#                      <dd>#}
+{#                        <a href="#">쪽지</a>#}
+{#                      </dd>#}
+{#                      <dd>#}
+{#                          <input type="submit" value="마이페이지" class="mypage"><!--btns-->#}
+{#                      </dd>#}
+{#                      <dd>#}
+{#                        <input type="submit" value="로그아웃" class="btn_logout"><!--logout btn-->#}
+{#                      </dd>#}
+{#                  </dl>#}
+{#              </dd>#}
+{#          </dl>#}
           <!--endif-->
       </div>
       <nav>
           <!--menu-->
           <dl>
-              <dt class="submenu"><a href="#">교수님 소개</a></dt>
-              <dt class="submenu"><a href="#">연구실 소개</a>
+              <dt class="submenu"><a href="{% url 'Profe_intro' %}">교수님 소개</a></dt>
+              <dt class="submenu"><a href="{% url 'Lab_intro' %}">연구실 소개</a>
                   <dd><a href="#">연구원 소개</a></dd>
               </dt>
-              <dt class="submenu"><a href="">정보 나눔터</a>
+              <dt class="submenu"><a href="{% url 'Profe_info' %}">정보 나눔터</a>
                       <!--submenu-->
                   <dd><a href="#">이상준교수님</a></dd>
                   <dd><a href="#">김장형교수님</a></dd>
@@ -83,7 +83,7 @@
                   <dd><a href="#">변영철교수님</a></dd>
                   <dd><a href="#">김도현교수님</a></dd>
               </dt>
-              <dt class="submenu"><a href="">익명 게시판</a></dt>
+              <dt class="submenu"><a href="{% url 'Unknown_post'%}">익명 게시판</a></dt>
           </dl>
       </nav>
   </aside>
