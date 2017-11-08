@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.content {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
 .lab-title {
   background-color: white;
   display: flex;
@@ -32,10 +38,10 @@
 }
 
 .lab-content-second {
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
   margin: 10px 5%;
   border: 1px solid #eaeaea;
   padding : 5px 20px;
@@ -50,6 +56,12 @@
 .professor, .lab-part p {
   font-weight: bold;
   font-size: 22px;
+}
+
+.profe-photo {
+  width: 120px;
+  height: 150px;
+  background-image: url("{% static 'img/Professor.jpg' %}");
 }
 
 .part {

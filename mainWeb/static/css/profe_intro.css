@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.content {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
 .profe-title {
   background-color: white;
   display: flex;
