@@ -79,7 +79,12 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 
 DATABASES = {
     'default': {
-        
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'islabDB', # DB명
+        'USER': 'islab_user', # 데이터베이스 계정
+        'PASSWORD': 'islabd425', # 계정 비밀번호
+        'HOST': '220.149.42.119', # 데이테베이스 주소(IP)
+        'PORT': '3306', # 데이터베이스 포트(보통은 3306)
     }
 }
 
