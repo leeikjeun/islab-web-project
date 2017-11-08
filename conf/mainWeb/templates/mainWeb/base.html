@@ -22,7 +22,7 @@
               <dd class="user_photo">
                       <span>
                           <!--if !empty photo-->
-                          <img src="">
+                          <img src="{{ user.userImg.url }}">
                           <!--endif-->
                       </span>
               </dd>
@@ -30,7 +30,8 @@
               <dd>
                   <dl>
                       <dt>
-                          <!--이름 학번-->
+                          {{ user.user_name}}
+                          {{ user.email}}
                       </dt>
                       <dd>
                         <a href="#">쪽지</a>
