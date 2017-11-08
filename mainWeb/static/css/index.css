@@ -8,7 +8,7 @@ img {
 
 .link {
   float: left;
-  padding: 2rem;
+
   width: 33%;
   height:30%;
   border-right: 3px solid #000;
@@ -16,8 +16,12 @@ img {
   background: #000;
   color: #fff;
 }
-
+.link > h2{
+  padding: 2rem;
+}
 .link > ul > li >a{
+  line-height: 2rem;
+  font-size: 1.25rem;
   text-decoration: none;
   color: #fff;
 }
@@ -27,6 +31,7 @@ img {
 }
 
 .new_post {
+  padding: 2rem;
   float:left;
   width: 33%;
   height: 30%;
@@ -34,6 +39,7 @@ img {
   text-align: center;
 }
 .best_post{
+  padding: 2rem;
   float: left;
   width: 33%;
   height: 30%;
