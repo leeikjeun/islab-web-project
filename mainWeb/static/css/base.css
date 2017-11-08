@@ -85,11 +85,17 @@ table {
 aside {
     float: left;
     width: 25%;
-    height:;
+    height:100%;
     border-left: 1px solid #eaeaea;
     border-right: 1px solid #eaeaea;
+    background: #transparent;
 }
-
+#content{
+  float: right;
+  width: 75%;
+  height:;
+  border-right: 1px solid #eaeaea;
+}
 aside::after {
     content: '';
     display: block;
@@ -170,11 +176,11 @@ nav dl{
     text-align: center;
 }
 dt > a{
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 nav dd > a{
   color: #8C8C8C;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 dt > a:hover{
   text-decoration: none;
