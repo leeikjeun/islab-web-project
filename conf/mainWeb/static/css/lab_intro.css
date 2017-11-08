@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.content {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
 .lab-title {
   background-color: white;
   display: flex;
@@ -33,8 +39,7 @@
 
 .lab-content-second {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-flow: row;
   height: 300px;
   margin: 10px 5%;
   border: 1px solid #eaeaea;
@@ -43,9 +48,14 @@
 }
 
 .professor, .lab-part {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
   height: 300px;
-  padding: 0px 5%;
 }
+
 
 .professor, .lab-part p {
   font-weight: bold;
