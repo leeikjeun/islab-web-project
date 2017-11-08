@@ -1,3 +1,6 @@
 *.pyc
 *~
 myvenv
+.idea
+db.sqlite3
+islabWebSite/settings.py
