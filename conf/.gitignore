@@ -4,4 +4,4 @@ myvenv
 .idea
 db.sqlite3
 conf/settings.py
-
+conf/__pycache__/*
