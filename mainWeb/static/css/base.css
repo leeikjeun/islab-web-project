@@ -79,6 +79,7 @@ table {
 /* base */
 #wrap {
     width: 1024px;
+    height: 768px;
     margin: 0 auto;
 }
 
@@ -86,15 +87,15 @@ aside {
     float: left;
     width: 25%;
     height:100%;
-    border-left: 1px solid #eaeaea;
-    border-right: 1px solid #eaeaea;
+    border-left: 3px solid #000;
+    border-right: 3px solid #000;
     background: #transparent;
 }
 #content{
   float: right;
   width: 75%;
   height:;
-  border-right: 1px solid #eaeaea;
+  border-right: 3px solid #000;
 }
 aside::after {
     content: '';
@@ -109,7 +110,8 @@ aside > div {
 
 aside > div#title {
     padding: 2.5rem 0;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 3px solid #000;
+    background: #EDD200;
 }
 
 aside > div#title > h1 {
@@ -118,9 +120,13 @@ aside > div#title > h1 {
     text-align: center;
 }
 
+aside > div#title > h1 > a{
+    text-decoration: none;
+}
+
 aside > div#loginForm {
     padding: 0.833rem 0;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 3px solid #000;
     text-align: center;
 }
 
