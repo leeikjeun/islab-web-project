@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 
 DATABASES = {
     'default': {
-        
+
     }
 }
 

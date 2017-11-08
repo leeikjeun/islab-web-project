@@ -1,0 +1,200 @@
+/* reset */
+html {
+    font-size: 12px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
+    margin: 0;
+    padding: 0
+}
+
+fieldset, img {
+    border: 0 none
+}
+
+dl, ul, ol, menu, li {
+    list-style: none
+}
+
+blockquote, q {
+    quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none
+}
+
+input, select, textarea, button {
+    vertical-align: middle
+}
+
+button {
+    border: 0 none;
+    background-color: transparent;
+    cursor: pointer
+}
+
+body {
+    background: #fff
+}
+
+body, th, td, input, select, textarea, button {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: '돋움', dotum, sans-serif;
+    color: #333
+}
+
+/* color값은 디자인가이드에 맞게사용 */
+a {
+    color: #333;
+    text-decoration: none
+}
+
+a:active, a:hover {
+    text-decoration: underline
+}
+
+address, caption, cite, code, dfn, em, var {
+    font-style: normal;
+    font-weight: normal
+}
+
+* {
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/* base */
+#wrap {
+    width: 1024px;
+    height: 768px;
+    margin: 0 auto;
+}
+
+aside {
+    float: left;
+    width: 25%;
+    height:100%;
+    border-left: 3px solid #000;
+    border-right: 3px solid #000;
+    background: transparent;
+}
+#content{
+  float: right;
+  width: 75%;
+  height:;
+  border-right: 3px solid #000;
+}
+aside::after {
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+aside > div {
+    width: 100%;
+}
+
+aside > div#title {
+    padding: 2.5rem 0;
+    border-bottom: 3px solid #000;
+    background: #EDD200;
+}
+
+aside > div#title > h1 {
+    font-size: 3rem;
+    color: #2457BD;
+    text-align: center;
+}
+
+aside > div#title > h1 > a{
+    text-decoration: none;
+}
+
+aside > div#loginForm {
+    padding: 0.833rem 0;
+    border-bottom: 3px solid #000;
+    text-align: center;
+}
+
+aside > div#loginForm > form > dl > dd {
+    width: 100%;
+    padding: 0.25rem;
+}
+
+aside > div#loginForm > form > dl > dd > span {
+    width: 25%;
+}
+
+aside > div#loginForm > form > dl > dd > input[type='text']
+aside > div#loginForm > form > dl > dd > input[type='password'] {
+    width: calc(75% - 5px);
+    margin-left: 5px;
+    border: none;
+    border-bottom: 1px solid #CCC;
+    background: transparent;
+}
+
+aside > div#loginForm > form > dl > dd > input[type='submit'] {
+    width: 70%;
+    padding: 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    background: #2457BD;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #fff;
+}
+
+aside > div#loginForm > dl.user_info {
+
+}
+
+aside > div#loginForm > dl.user_info > dd.user_photo {
+
+}
+
+aside > div#loginForm > dl.user_info > dd.user_photo > span {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-size: 100% 100%;
+    background: url('') center center;
+}
+
+aside > div#loginForm > dl.user_info > dd.user_photo > span > img {
+
+}
+nav dl{
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+dt > a{
+  font-size: 1.5rem;
+}
+nav dd > a{
+  color: #8C8C8C;
+  font-size: 1.2rem;
+}
+
+dt > a:hover{
+  text-decoration: none;
+  font-weight: bold;
+}
+nav dd > a:hover{
+  font-weight: bold;
+  text-decoration: none;
+  color: #EDD200;
+}
