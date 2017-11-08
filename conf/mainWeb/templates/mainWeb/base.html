@@ -17,26 +17,7 @@
           <h1><a href="{%url 'index'%}">좋은425</a></h1>
       </div>
       <div id="loginForm">
-          <!--if !login-->
-{#          <form>#}
-{#              <dl>#}
-{#                  <dd>#}
-{#                      <span>ID :</span>#}
-{#                      <input type="text" name="user-id" class="user-id">#}
-{#                  </dd>#}
-{#                  <dd>#}
-{#                      <span>PW :</span>#}
-{#                      <input type="password" name="user-pw" class="user-pw">#}
-{#                  </dd>#}
-{#                  <dd>#}
-{#                      <input type="submit" value="Login" class="btn_login">#}
-{#                  </dd>#}
-{#                  <dd>#}
-{#                      <a href="#">회원가입</a> | <a href="#">아이디/비밀번호찾기</a>#}
-{#                  </dd>#}
-{#              </dl>#}
-{#          </form>#}
-          <!--else-->
+          {% if user.is_authenticated %}
           <dl class="user_info">
               <dd class="user_photo">
                       <span>
@@ -58,12 +39,33 @@
                           <input type="submit" value="마이페이지" class="mypage"><!--btns-->
                       </dd>
                       <dd>
-                        <input type="submit" value="로그아웃" class="btn_logout"><!--logout btn-->
+                        <a href="{% url 'logout' %}">로그아웃</a>
                       </dd>
                   </dl>
               </dd>
           </dl>
-          <!--endif-->
+          {% else %}
+          <form action="{% url 'login' %}" method="post">
+              {% csrf_token %}
+              <dl>
+                  <dd>
+                      <span>ID :</span>
+                      <input type="text" required id="username_id" name="username" value="">
+                  </dd>
+                  <dd>
+                      <span>PW :</span>
+                      <input type="password" id="id_password" required name="password" value="">
+                  </dd>
+                  <dd>
+                    <button type="submit" class="btn_login">Login</button>
+                  </dd>
+                  <dd>
+                      <a href="{% url 'signup' %}">회원가입</a> | <a href="#">아이디/비밀번호찾기</a>
+                  </dd>
+              </dl>
+          </form>
+
+          {% endif %}
       </div>
       <nav>
           <!--menu-->

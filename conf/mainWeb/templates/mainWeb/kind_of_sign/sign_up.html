@@ -1,0 +1,20 @@
+{% extends 'mainWeb/base.html' %}
+{% load staticfiles %}
+{% block head %}
+
+
+{% endblock %}
+
+
+{% block content %}
+<h1>
+  회원가입
+</h1>
+
+<form action="{% url 'signup' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

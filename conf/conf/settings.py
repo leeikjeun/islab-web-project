@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 
 DATABASES = {
     'default': {
-
+        
     }
 }
 
@@ -128,4 +128,4 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-AUTH_USER_MODEL = 'testApp.MyUser'
+AUTH_USER_MODEL = 'mainWeb.MyUser'

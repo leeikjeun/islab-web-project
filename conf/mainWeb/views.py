@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render ,redirect
+from .admin import UserCreationForm
 
 # Create your views here.
 def index(request):
@@ -31,3 +32,12 @@ def report(request):
 def mypage(request):
     return render(request, 'mainWeb/mypage/mypage.html', {})
 
+def signUp(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = UserCreationForm()
+    return render(request, 'mainWeb/kind_of_sign/sign_up.html', {'form': form})
