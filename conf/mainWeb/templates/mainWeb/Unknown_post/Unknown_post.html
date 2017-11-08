@@ -1,10 +1,15 @@
 {% extends 'mainWeb/board.html' %}
 
 {% block list %}
+
+    {% for board in boards %}
     <tr>
-        <td>1</td>
-        <td>1번 글입니다.</td>
-        <td>지원</td>
-        <td>123</td>
+      <td>{{ board.id }}</td>
+      <td>{{ board.title }}</td>
+      <td>{{ board.makerUser }}</td>
+      <td>{{ board.hit_count }}</td>
+      <td>{{ board.created_date }}</td>
     </tr>
+    {% endfor %}
+
 {% endblock %}

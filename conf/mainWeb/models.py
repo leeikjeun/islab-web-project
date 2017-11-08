@@ -78,9 +78,10 @@ class MyUser(AbstractBaseUser):
 
 
 
-# class TestBoard(models.Model):
-#     title = models.CharField(max_length=50, blank=True)
-#     makerUser = models.CharField(max_length=50, blank=True)
-#     created_date = models.DateField(auto_now_add=True)
-#     content = models.TextField(blank=False)
-#     fileContent = models.FileField(upload_to = 'test/%m/%d', default=None, blank=True, null=True);
+class UnknownBoard(models.Model):
+    title = models.CharField(max_length=50, blank=True, null=False)
+    makerUser = models.CharField(max_length=50, blank=True, null=False)
+    password = models.CharField(max_length=50, blank=True, null=False)
+    created_date = models.DateField(auto_now_add=True, null=False)
+    content = models.TextField(blank=False)
+    hit_count = models.IntegerField(default=0)

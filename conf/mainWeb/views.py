@@ -1,5 +1,8 @@
 from django.shortcuts import render ,redirect
 from .admin import UserCreationForm
+from .forms import UnknownBoardCreationForm
+from .models import UnknownBoard
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def index(request):
@@ -12,7 +15,32 @@ def Profe_intro(request):
     return render(request, 'mainWeb/Profe_intro/profe_intro.html', {})
 
 def Unknown_post(request):
-    return render(request, 'mainWeb/Unknown_post/Unknown_post.html', {})
+    unKnowBoard = UnknownBoard.objects.all()
+    paginator = Paginator(unKnowBoard, 10) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+
+    try:
+        unKnowBoard = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        unKnowBoard = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        unKnowBoard = paginator.page(paginator.num_pages)
+
+    return render(request, 'mainWeb/Unknown_post/Unknown_post.html', {'boards' : unKnowBoard})
+
+def Unknown_post_create(request):
+    if request.method == 'POST':
+        form = UnknownBoardCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/unknownpost')
+    else:
+        form = UnknownBoardCreationForm()
+
+    return render(request, 'mainWeb/Unknown_post/Unknown_post_create.html', {'form':form})
 
 def Unknown_post_detail(request):
     return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {})

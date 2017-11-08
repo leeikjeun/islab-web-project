@@ -134,8 +134,23 @@
         </ul>
     </div>
 
-    <a href="#" class="myButton">글쓰기</a>
+    <a href="{% url 'unknown_post_create' %}" class="myButton">글쓰기</a>
 
+    <div class="pagination">
+    <span class="step-links">
+        {% if boards.has_previous %}
+            <a href="?page={{ boards.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ boards.number }} of {{ boards.paginator.num_pages }}.
+        </span>
+
+        {% if boards.has_next %}
+            <a href="?page={{ boards.next_page_number }}">next</a>
+        {% endif %}
+      </span>
+    </div>
 
 
 {% endblock %}

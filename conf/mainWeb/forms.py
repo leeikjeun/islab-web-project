@@ -1,8 +1,11 @@
 from django import forms
-from .models import TestBoard
+from .models import UnknownBoard
 
-class TestBoardCreationForm(forms.ModelForm):
+class UnknownBoardCreationForm(forms.ModelForm):
 
     class Meta:
-        model = TestBoard
-        fields = ('title', 'makerUser','content','fileContent')
+        model = UnknownBoard
+        fields = ('title', 'makerUser','content','password')
+        widgets = {
+        'password': forms.PasswordInput(),
+    }
