@@ -85,3 +85,10 @@ class UnknownBoard(models.Model):
     created_date = models.DateField(auto_now_add=True, null=False)
     content = models.TextField(blank=False)
     hit_count = models.IntegerField(default=0)
+
+
+class UnknowCommnet(models.Model):
+    board = models.ForeignKey(UnknownBoard, on_delete=models.CASCADE)
+    user = models.CharField(max_length=50, blank=True, null=False)
+    content = models.CharField(max_length=100, blank=True, null=False)
+    created_date = models.DateField(auto_now_add=True, null=False)
