@@ -33,12 +33,8 @@
   line-height: 30px;
 }
 
-.lab-content-first h2, .lab-content-second h2 {
+.lab-content-first h2, .lab-content-second h2{
   color : orange;
-}
-
-.lab-content-second {
-  margin-top: 10px;
 }
 
 .lab-location {
