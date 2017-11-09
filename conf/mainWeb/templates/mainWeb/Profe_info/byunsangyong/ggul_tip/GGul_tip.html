@@ -172,7 +172,7 @@ a.link{
 {% endblock %}
 {% block content %}
 <div class="pf_photo">
-  <img src="{% static 'img/Pf_Byun.jpg' %}" alt="#">
+  <img src="{% static 'img/Pf_Bbyun.jpg' %}" alt="#">
 </div>
 <div class="info">
         <h3>변 상 용 교 수 님</h3><br>
@@ -192,18 +192,36 @@ a.link{
   </ul>
 
 
+  {% for board in boards %}
   <ul>
-    <a href="">
-      <li class="col1">1</li>
-      <li class="col2">qweqwe</li>
-      <li class="col3">지원</li>
-      <li class="col4">0</li>
-      <li class="col5">11.1.1</li>
+    <a href="#">
+      <li class="col1">{{ board.id }}</li>
+      <li class="col2">{{ board.title }}</li>
+      <li class="col3">{{ board.user }}</li>
+      <li class="col4">{{ board.created_date }}</li>
+      <li class="col5">{{ board.hit_count }}</li>
     </a>
   </ul>
+  {% endfor %}
 
 </div>
 
   <a href="#" class="myButton">글쓰기</a>
+
+  <div class="pagination">
+  <span class="step-links">
+      {% if boards.has_previous %}
+          <a href="?page={{ boards.previous_page_number }}">previous</a>
+      {% endif %}
+
+      <span class="current">
+          Page {{ boards.number }} of {{ boards.paginator.num_pages }}.
+      </span>
+
+      {% if boards.has_next %}
+          <a href="?page={{ boards.next_page_number }}">next</a>
+      {% endif %}
+    </span>
+  </div>
 
 {% endblock %}
