@@ -7,7 +7,6 @@
         h2.title{
           text-align: center;
           margin-top: 10rem;
-          margin-left: 2rem;
         }
         div.me-wrapper{
             display: flex;
@@ -15,7 +14,6 @@
         }
 
         div.profile{
-            padding-bottom: 100%;
             width: 50%;
         }
 
@@ -64,7 +62,52 @@
           margin-right: auto;
         }
 
+        .me-wrapper{
+          height: 300px;
+        }
 
+        .message_title {
+          text-align: center;
+        }
+
+        .table {
+          margin-left: 20px;
+          margin-right: 20px;
+          border-right: 1px solid #000;
+        }
+
+        .my-page-table-head ul{
+          display: flex;
+          flex-flow: row;
+          text-align: center;
+        }
+
+        .my-page-table-body ul{
+          display: flex;
+          flex-flow: row;
+          text-align: center;
+        }
+
+        .my-page-table-head ul li{
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          background-color: rgb(112, 196, 105);
+          width: 25%;
+          height: 30px;
+          border-top: 1px solid #000;
+          border-left: 1px solid #000;
+        }
+
+        .my-page-table-body ul li{
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          width: 25%;
+          height: 30px;
+          border-bottom: 1px solid #000;
+          border-left: 1px solid #000;
+        }
 
     </style>
 
@@ -100,4 +143,26 @@
           <a class="Modify" href="#">회원정보수정</a>
         </div>
       </div>
+      <h2 class="message_title">쪽지</h2>
+      <div class="table">
+          <div class="my-page-table-head">
+              <ul>
+                <li>제목</li>
+                <li>내용</li>
+                <li>작성날짜</li>
+                <li>보낸이</li>
+                <li>받는이</li>
+              </ul>
+          </div>
+          <div class="my-page-table-body">
+              <ul>
+                <li>{{ message.title }}</li>
+                <li>{{ message.content }}</li>
+                <li>{{ message.created_date }}</li>
+                <li>{{ message.senderUser }}</li>
+                <li>{{ message.recieveUser }}</li>
+              </ul>
+          </div>
+      </div>
+
 {% endblock %}
