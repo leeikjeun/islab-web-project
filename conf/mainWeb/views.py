@@ -44,6 +44,8 @@ def unknown_post_create(request):
 def unknown_post_detail(request, pk):
     board = UnknownBoard.objects.get(id=pk)
     board.hit_count += 1;
+
+
     board.save();
     return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {"board":board})
 
@@ -53,17 +55,6 @@ def profe_info(request):
 def ggul_tip(request, pr):
     boards = GGulTipBoard.objects.all().filter(professor=pr)
     return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {'boards' : boards})
-
-def ggul_tip_create(request):
-    if request.method == 'POST':
-        form = GGulTipBoardCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/ggultip')
-    else:
-        form = UnknownBoardCreationForm()
-    return render(request, 'mainWeb/Profe_info/GGul_tip/ggul_tip_create.html', {'form':form})
-
 
 def jokbo(request):
     return render(request, 'mainWeb/Profe_info/jokbo/jokbo.html', {})
@@ -90,10 +81,11 @@ def signUp(request):
 def message(request):
 
     if request.method == 'POST':
-        user = MyUser.objects.all(name=request.POST['senderUser'])
-        massage = Message(title = requese.POST['title'], content = requese.POST['title'], senderUser=request.user.username)
-        massage.save()
-        user.messages_set.add(massage)
+
+        massage = Message(title = request.POST['title'],
+                        content = request.POST['title'],
+                        senderUser= request.user.user_name,
+                        receiveUser=request.POST['receiveUser'])
 
         return redirect('/')
 
