@@ -34,7 +34,7 @@
                           {{ user.email}}
                       </dt>
                       <dd>
-                        <a href="#">쪽지</a>
+                        <a href="{% url 'message' %}"onclick="window.open(this.href,'','width=510, height=620, scrollbars=yes'); return false;" href="{% url 'message' %}">쪽지</a>
                       </dd>
                       <dd>
                         <a href="{% url 'mypage' %}">

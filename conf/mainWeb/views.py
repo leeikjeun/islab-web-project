@@ -73,3 +73,6 @@ def signUp(request):
     else:
         form = UserCreationForm()
     return render(request, 'mainWeb/kind_of_sign/sign_up.html', {'form': form})
+
+def message(request):
+    return render(request, 'mainWeb/message.html', {})
