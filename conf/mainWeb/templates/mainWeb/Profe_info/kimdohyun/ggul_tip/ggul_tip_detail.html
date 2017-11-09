@@ -1,42 +1,65 @@
 {% extends 'mainWeb/base.html' %}
 {% load staticfiles %}
+{% block head%}
+<style>
+div.info{
+  flex:0 0 50%;
+  padding: 1.2rem;
+  height:25%;
+  border-bottom: 3px solid #000;
+  width: 50%;
+  float: left;
+}
+.info ul{
+  text-align: right;
+  padding: 1.667rem 0;
+  padding-right: 15rem;
+}
+.info ul li{
+  display: inline-block;
+}
+.info ul li a{
+  padding: 1.667rem;
+  font-size: 1.2rem;
+}
+.info ul li a:hover{
+  text-decoration: none;
+  font-weight: bold;
+}
+a.link{
+    text-align: center;
+}
+.pf_photo img{
+  width: 10rem;
+  height: 12.5rem;
+  display: block;
+  margin: auto;
+}
+.info h3{
+  padding-top: 1rem;
+  padding-right: 17rem;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.info p{
+  text-align: right;
+  font-size: 1.2rem;
+  padding: 0.417rem 0;
+  padding-right: 14rem;
+}
+.pf_photo{
+  float: left;
+  width: 50%;
+  height: 25%;
+  padding-top: 1.5rem;
+  text-align: center;
+  border-bottom: 3px solid #000;
+}
 
-{% block head %}
-<style media="screen">
-  div.sub_content_title{
-    margin-top: 10rem;
-    margin-left: 20px;
-    margin-right: 20px;
 
-  }
-  div.post {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
 
-  div.date{
-    margin: 10px;
-  }
-
-  h1.title{
-    padding: 20px;
-    border-bottom: 1px solid grey;
-    border-top: 1px solid grey;
-  }
-
-  p.content{
-    width: 100%;
-    height: 300px;
-    padding-top: 10px;
-    border-bottom: 1px solid grey;
-  }
-
-  div.button{
-    text-align: right;
-    margin-top: 10px;
-  }
-
-  .myButton {
+.myButton {
 	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
 	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
 	box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -56,12 +79,14 @@
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:12px;
+	font-size:15px;
 	font-weight:bold;
 	padding:11px 23px;
 	text-decoration:none;
 	text-shadow:0px -1px 0px #2b665e;
-
+  float: right;
+  margin-right: 30px;
+  margin-top: 20px;
 }
 .myButton:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
@@ -77,29 +102,37 @@
 	position:relative;
 	top:1px;
 }
-
-
-
 </style>
-{% endblock%}
 
+{% endblock %}
 {% block content %}
-    <div class="sub_content_title">
-      <h2> 익명게시판</h2>
-    </div>
-
-    <div class="post">
-            <div class="date">
-                {{ board.created_date }}
-            </div>
-        <h1 class="title">{{ board.title }} {{ board.makerUser }} {{ board.hit_count }}</h1>
-        <a href="#"></a>
-        <p class="content">{{ board.content|linebreaksbr }}
-        </p>
-        <div class="button">
-          <h3><a href="#" class="myButton"> 수정 </a>  /  <a href="#" class="myButton"> 삭제 </a></h3>
+<div class="pf_photo">
+  <img src="{% static 'img/pfan.jpg' %}" alt="#">
+</div>
+<div class="info">
+        <h3>김 도 현 교 수 님</h3><br>
+        <p>모바일컴퓨팅 연구실(D409)</p>
+        <ul>
+          <li><a class="link" href="#">꿀팁</a></li>
+          <li><a class="link" href="#">레포트</a></li>
+        </ul>
+</div>
+<div class="title">
+        <div class="date">
+            {{ board.created_date }}
         </div>
+    <h1 class="title">{{ board.title }} {{ board.User }} {{ board.hit_count }}</h1>
+    <a href="#"></a>
+    <p class="content">{{ board.content|linebreaksbr }}
+    </p>
+    <div class="upload">
+      {{ board.filecontent.url }}
     </div>
+    <div class="button">
+      <h3><a href="#" class="myButton"> 수정 </a>  /  <a href="#" class="myButton"> 삭제 </a></h3>
+    </div>
+</div>
 
+  <a href="#" class="myButton">글쓰기</a>
 
 {% endblock %}
