@@ -1,22 +1,125 @@
 {% extends 'mainWeb/base.html' %}
 {% load staticfiles %}
 {% block head %}
+<style media="screen">
+  .title{
+    width: 100%;
+    height: 9%;
+    padding-top: 1.5rem;
+    background: #FB1616;
+    color: #fff;
+    border-bottom: 3px solid #000;
+    text-align: center;
+  }
 
+  div.sign_up_form{
+    padding-top: 3rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  div.sign_up_form > div{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+  }
+
+  div.name{
+  }
+
+  span.name{
+    padding-right: 30px;
+    font-size: 17px;
+  }
+
+  span.email{
+    padding-right: 11px;
+    font-size: 17px;
+  }
+  span.pw{
+    padding-right: 0px;
+    font-size: 17px;
+  }
+
+  span.pw2{
+    font-size: 17px;
+    padding-left: 20px;
+  }
+
+  span.birth{
+    padding-right: 0px;
+    font-size: 17px;
+  }
+  span.user_img{
+    padding-right: 0px;
+    font-size: 17px;
+  }
+
+  div.signup{
+    text-align: center;
+    border-color: white;
+  }
+
+  button.signup {
+  	background-color:#2457BD;
+  	-moz-border-radius:28px;
+  	-webkit-border-radius:28px;
+  	border-radius:28px;
+  	border:1px solid black;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:17px;
+  	padding:16px 31px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #2f6627;
+  }
+
+  button.signup:hover {
+  	background-color:#3232FF;
+  }
+  button.signup:active {
+  	position:relative;
+  	top:1px;
+  }
+
+
+
+</style>
 
 {% endblock %}
 
 
 {% block content %}
-<h1>
+<h1 class="title">
   회원가입
 </h1>
 
 <form action="{% url 'signup' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
+    <div class="sign_up_form">
+      <div class="name">
+        <span class="name">이름 : </span>{{form.user_name}}
+      </div>
+      <div class="email">
+        <span class="email">e-mail : </span>{{form.email}}
+      </div>
+      <div class="pw">
+        <span class="pw">비밀번호 : </span>{{form.password1}}
+        <span class="pw2">비밀번호확인 : </span>{{form.password2}}
+      </div>
+      <div class="birth">
+        <span class="birth">생년월일 : </span>{{form.date_of_birth}}
+      </div>
+      <div class="user_img">
+        <span class="user_img">사진 : </span>{{form.userImg}}
+      </div>
+    </div>
+    <!-- 'email', 'date_of_birth','user_name','userImg', 'password1', 'password2' label -->
 
-    {{form}}
-
-    <input type="submit" value="Submit" />
-</form>
+    <div class="signup">
+      <button class="signup" type="submit" name="button">가입하기</button>
+    </div></form>
 
 {% endblock %}
