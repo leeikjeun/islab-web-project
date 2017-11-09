@@ -101,7 +101,8 @@ def ggulTipCreate(request,pr=None):
         GGulTipBoard.create(title=request.POST['title'],
                             user=request.user.user_name,
                             content=request.POST['content'],
-                            fileContent=request.FILES['fileContent']
+                            fileContent=request.FILES['fileContent'],
+                            professor=request.POST['professor']
                             )
         return redirect('/')
     else:
@@ -113,7 +114,8 @@ def reportCreate(request):
         GGulTipBoard.create(title=request.POST['title'],
                         user=request.user.user_name,
                         content=request.POST['content'],
-                        fileContent=request.FILES['fileContent']
+                        fileContent=request.FILES['fileContent'],
+                        professor=request.POST['professor']
                         )
         return redirect('/')
     else:
