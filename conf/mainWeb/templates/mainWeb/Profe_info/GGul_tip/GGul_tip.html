@@ -1,16 +1,161 @@
 {% extends 'mainWeb/base.html' %}
 {% load staticfiles %}
 {% block head%}
+<style>
+div.info{
+  flex:0 0 50%;
+  padding: 1.2rem;
+  height:25%;
+  border-bottom: 3px solid #000;
+  width: 50%;
+  float: left;
+}
+.info ul{
+  text-align: right;
+  padding: 1.667rem 0;
+  padding-right: 15rem;
+}
+.info ul li{
+  display: inline-block;
+}
+.info ul li a{
+  padding: 1.667rem;
+  font-size: 1.2rem;
+}
+.info ul li a:hover{
+  text-decoration: none;
+  font-weight: bold;
+}
+a.link{
+    text-align: center;
+}
+.pf_photo img{
+  width: 10rem;
+  height: 12.5rem;
+  display: block;
+  margin: auto;
+}
+.info h3{
+  padding-top: 1rem;
+  padding-right: 17rem;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.info p{
+  text-align: right;
+  font-size: 1.2rem;
+  padding: 0.417rem 0;
+  padding-right: 14rem;
+}
+.pf_photo{
+  float: left;
+  width: 50%;
+  height: 25%;
+  padding-top: 1.5rem;
+  text-align: center;
+  border-bottom: 3px solid #000;
+}
+.board_list {
+    clear: both;
+    border-collapse: collapse;
+    border: none 0;
+    border-width: 0 0 1px 0;
+    padding: 0 10px;
+    border-bottom: 1px solid #545861;
+    table-layout: fixed;
+}
+table{
+  display: table;
+  width: 100%;
+}
+colgroup{
+  display: table-column-group;
+}
+col{
+  display: table-column;
+}
+.board_list thead {
+    border-collapse: collapse;
+    border: none 0;
+    border-width: 0 0 1px 0;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+  }
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.board_list thead th {
+    border-collapse: collapse;
+    border: none 0;
+    color: #636363;
+    font-weight: bold;
+    text-align: center;
+    padding: 6px 4px;
+    background: #f1f1f1;
+    border-bottom: 1px solid #d7d7d7;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.board_list td {
+    border-collapse: collapse;
+    border: none 0;
+    border-width: 0 0 1px 0;
+    padding: 10px 5px;
+    border-bottom: 1px solid #dedede;
+    color: #666666;
+    text-align: center;
+}
+</style>
 
 {% endblock %}
 {% block content %}
+<div class="pf_photo">
+  <img src="{% static 'img/Professor.jpg' %}" alt="#">
+</div>
 <div class="info">
-        <img src="{% static 'img/Professor.jpg' %}" alt="" align="left">
         <h3>이 상 준 교 수 님</h3><br>
         <p>지능형시스템 연구실(D425)</p>
         <ul>
-          <li><a class="link" href="">꿀팁</a></li>
-          <li><a class="link" href="">레포트</a></li>
+          <li><a class="link" href="#">꿀팁</a></li>
+          <li><a class="link" href="#">레포트</a></li>
         </ul>
 </div>
+<div>
+  <table class="board_list">
+    <colgroup>
+      <col style ="width: 8%">
+      <col style ="width: 48%">
+      <col style ="width: 15%">
+      <col style ="width: 15%">
+      <col style ="width: 14%">
+    </colgroup>
+    <thead>
+      <th scope="col">No</th>
+      <th scope="col">제목</th>
+      <th scope="col">작성자</th>
+      <th scope="col">등록일</th>
+      <th scope="col">조회</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="left"><a href="">화일처리 꿀잼</a></td>
+        <td>경하하하</td>
+        <td>2017.11.10</td>
+        <td>20</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>
+
 {% endblock %}
