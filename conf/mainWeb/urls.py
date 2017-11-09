@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^unknownpostdetail/(?P<pk>\d+)/$', views.unknown_post_detail, name='Unknown_post_detail'),
     url(r'^profeinfo/$', views.profe_info, name='Profe_info'),
     url(r'^ggultip/(?P<pr>\w+)/$', views.ggul_tip, name='GGul_tip'),
+    url(r'^ggultipdetail.html/$', views.ggul_tip_create, name='ggul_tip_create'),
     # url(r'^ggultip/$', views.GGul_tip, name='GGul_tip'),
     url(r'^jokbo/$', views.jokbo, name='jokbo'),
     url(r'^report/$', views.report, name='report'),
