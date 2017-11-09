@@ -79,6 +79,7 @@
                   <li class="submenu-item lab_info_submenu-item"><a href="{% url 'lab_member' %}">연구원 소개</a></li>
                   </ul>
               </li>
+              {% if user.is_authenticated %}
               <li class="submenu info_share"><a href="{% url 'Profe_info' %}">정보 나눔터</a>
 
                 <ul class="test">    <!--submenu-->
@@ -91,7 +92,8 @@
                   <li class="submenu-item info_share_submenu-item"><a href="#">변영철교수님</a></li>
                   <li class="submenu-item info_share_submenu-item"><a href="#">김도현교수님</a></li>
                 </ul>
-            </li>
+              </li>
+              {% endif %}
               <li class="submenu"><a href="{% url 'Unknown_post'%}">익명 게시판</a></li>
           </ul>
       </nav>
