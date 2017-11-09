@@ -82,7 +82,7 @@
               <li class="submenu info_share"><a href="{% url 'Profe_info' %}">정보 나눔터</a>
 
                 <ul class="test">    <!--submenu-->
-                  <li class="submenu-item info_share_submenu-item"><a href="{% url 'GGul_tip' pr='이상준' %}">이상준교수님</a></li>
+                  <li class="submenu-item info_share_submenu-item"><a href="#">이상준교수님</a></li>
                   <li class="submenu-item info_share_submenu-item"><a href="#">김장형교수님</a></li>
                   <li class="submenu-item info_share_submenu-item"><a href="#">안기중교수님</a></li>
                   <li class="submenu-item info_share_submenu-item"><a href="#">변상용교수님</a></li>
@@ -111,7 +111,7 @@
      labInfo.addEventListener('mouseover',function(e){
 
        for(var i = 0; i < labInfoSubItems.length; i++){
-         labInfoSubItems[i].style.transition = "all 0.5s ease-in";
+         labInfoSubItems[i].style.transition = "all 0.3s ease-in";
          labInfoSubItems[i].style.height = "26px"
        }
 
@@ -121,7 +121,7 @@
      infoShare.addEventListener('mouseover',function(e){
 
        for(var i = 0; i < infoShareItems.length; i++){
-         infoShareItems[i].style.transition = "all 0.5s ease-in";
+         infoShareItems[i].style.transition = "all 0.3s ease-in";
          infoShareItems[i].style.height = "26px"
        }
 

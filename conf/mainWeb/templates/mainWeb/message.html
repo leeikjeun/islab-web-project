@@ -7,14 +7,15 @@
   <title>Document</title>
 </head>
 <body>
-  제목: <input type="text" name="" value="">
-  내용: <input type="text" name="" value="">
-  <a href="#">보내기</a>
-  <div class="">
-    <ul>
-      <li>지원</li>
-    </ul>
-  </div>
+  <form  action="{% url 'message' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <select name="sendetUser">
+      
+    </select>
+
+    <button class="upload" type="submit" name="button">업로드</button>
+  </form>
 
 </body>
 </html>

@@ -36,7 +36,11 @@ class MyUserManager(BaseUserManager):
         user.is_admin = True
         user.save(using=self._db)
         return user
-
+class Message(models.Model):
+    title = models.CharField(max_length=50, blank=True, null=False)
+    content = models.TextField(blank=False)
+    created_date = models.DateField(auto_now_add=True, null=False)
+    senderUser = models.CharField(max_length=50, blank=True, null=False)
 
 class MyUser(AbstractBaseUser):
     email = models.EmailField(
@@ -50,7 +54,7 @@ class MyUser(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     userImg = models.ImageField(upload_to = 'test/%m/%d', default = 'test/None/no-img.jpg')
-
+    messages = models.ForeignKey(Message, on_delete=models.CASCADE, default=None,blank=True,null=True)
 
     objects = MyUserManager()
 

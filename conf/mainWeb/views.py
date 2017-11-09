@@ -1,7 +1,7 @@
 from django.shortcuts import render ,redirect
 from .admin import UserCreationForm
-from .forms import UnknownBoardCreationForm
-from .models import UnknownBoard, GGulTipBoard, ReportBoard
+from .forms import UnknownBoardCreationForm, MessageCreationFrom
+from .models import UnknownBoard, GGulTipBoard, ReportBoard, MyUser
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
@@ -75,4 +75,13 @@ def signUp(request):
     return render(request, 'mainWeb/kind_of_sign/sign_up.html', {'form': form})
 
 def message(request):
-    return render(request, 'mainWeb/message.html', {})
+    userList = MyUser.objects.all()
+    if request.method == 'POST':
+        form = MessageCreationFrom(request.POST)
+        # if form.is_valid():
+        #     form.save()
+        #     return redirect('/')
+    else:
+        form = MessageCreationFrom()
+
+    return render(request, 'mainWeb/message.html', {'form': form, 'users': userList})

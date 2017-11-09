@@ -1,5 +1,5 @@
 from django import forms
-from .models import UnknownBoard, UnknowCommnet, GGulTipBoard, ReportBoard
+from .models import UnknownBoard, UnknowCommnet, GGulTipBoard, ReportBoard, Message
 
 class UnknownBoardCreationForm(forms.ModelForm):
 
@@ -31,3 +31,9 @@ class ReportBoardCreationFrom(forms.ModelForm):
     class Meta:
         model = ReportBoard
         fields = ('title', 'user','content','fileContent')
+
+class MessageCreationFrom(forms.ModelForm):
+
+    class Meta:
+        model = Message
+        fields = {'title','content'}
