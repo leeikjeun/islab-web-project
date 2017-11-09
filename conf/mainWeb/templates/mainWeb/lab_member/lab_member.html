@@ -7,7 +7,7 @@
       width: 100%;
       height: 9%;
       padding-top: 1.5rem;
-      background: #2457DB;
+      background: #FB1616;
       color: #fff;
       border-bottom: 3px solid #000;
       text-align: center;
@@ -19,41 +19,31 @@
       flex-wrap: wrap;
     }
     div.info{
-      flex:0 0 50%;
+      flex:0 0 100%;
       padding: 0.833rem;
       height:25%;
       border-bottom: 3px solid #000;
     }
-    .info ul{
-      text-align: center;
-      padding: 1.667rem 0;
+
+    div.content {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      padding-left: 1rem;
     }
-    .info ul li{
-      display: inline-block;
-    }
-    .info ul li a{
-      padding: 1.667rem;
-      font-size: 1.2rem;
-    }
-    .info ul li a:hover{
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a.link{
-        text-align: center;
-    }
+
     .info img{
       width: 10rem;
       height: 12.5rem;
     }
+
     .info h3{
       padding-top: 1rem;
-      text-align: center;
       font-weight: bold;
       font-size: 1.25rem;
     }
+
     .info p{
-      text-align: center;
       font-size: 1.2rem;
       padding: 0.417rem 0;
     }
@@ -64,79 +54,42 @@
 {%  block content %}
     <div class="info-wrapper">
     {% block list %}
-    <h1>정 보 나 눔 터</h1>
+    <h1>연 구 원 소 개</h1>
         <div class="info">
-                <img src="{% static 'img/Professor.jpg' %}" alt="" align="left">
-                <h3>이 상 준 교 수 님</h3><br>
-                <p>지능형시스템 연구실(D425)</p>
-                <ul>
-                  <li><a class="link" href="">꿀팁</a></li>
-                  <li><a class="link" href="">레포트</a></li>
-                </ul>
-        </div>
-        <div class="info">
-                <img src="{% static 'img/pf_kim.jpg' %}" alt="" align="left">
-                <h3>김 장 형 교 수 님</h3><br>
-                <p>멀티미디어 연구실(D403)</p>
-                <ul>
-                  <li><a class="link" href="">꿀팁</a></li>
-                  <li><a class="link" href="">레포트</a></li>
-                </ul>
-
-        </div>
-        <div class="info">
-                <img src="{% static 'img/pfan.jpg' %}" alt="" align="left">
-                <h3>안 기 중 교 수 님</h3><br>
-                <p>정보통신 연구실(D430)</p>
-                <ul>
-                  <li><a class="link" href="">꿀팁</a></li>
-                  <li><a class="link" href="">레포트</a></li>
-                </ul>
+          <img src="{% static 'img/ikjeon.jpg' %}" alt="" align="left">
+          <div class="content">
+            <h3>이 익 전</h3>
+            <p>학    번 : 2012108202</p>
+            <p>e-mail : dldlrwjs12@gmail.com</p>
+            <p>자기소개 : 하이루~ 난 우리 연구실의 얼굴마담~ (연구실원 모집중!)</p>
           </div>
-        <div class="info">
-                <img src="{% static 'img/pf_kwak.jpg' %}" alt="" align="left">
-                <h3>곽 호 영 교 수 님</h3><br>
-                <p>시스템소프트웨어 연구실(D419)</p>
-                <ul>
-                  <li><a class="link" href="">꿀팁</a></li>
-                  <li><a class="link" href="">레포트</a></li>
-                </ul>
         </div>
         <div class="info">
-            <img src="{% static 'img/pf_Bbyun.jpg' %}" alt="" align="left">
-            <h3>변 상 용 교 수 님</h3><br>
-            <p>소프트웨어공학 연구실(D404)</p>
-            <ul>
-              <li><a class="link" href="">꿀팁</a></li>
-              <li><a class="link" href="">레포트</a></li>
-            </ul>
+          <img src="{% static 'img/seungchan.jpg' %}" alt="" align="left">
+          <div class="content">
+            <h3>김 승 찬</h3>
+            <p>학    번 : 2012108177</p>
+            <p>e-mail : blueblack6705@gmail.com</p>
+            <p>자기소개 : 하이하이~</p>
+          </div>
         </div>
         <div class="info">
-            <img src="{% static 'img/pf_song.jpg' %}" alt="" align="left">
-            <h3>송 왕 철 교 수 님</h3><br>
-            <p>네트웤컨버전스 연구실(D428)</p>
-            <ul>
-              <li><a class="link" href="">꿀팁</a></li>
-              <li><a class="link" href="">레포트</a></li>
-            </ul>
+          <img src="{% static 'img/jiwon.jpg' %}" alt="" align="left">
+          <div class="content">
+            <h3>허 지 원</h3>
+            <p>학    번 : 2013108205</p>
+            <p>e-mail : llkjop24@gmail.com</p>
+            <p>자기소개 : 425 곧 내 나와바리</p>
+          </div>
         </div>
         <div class="info">
-            <img src="{% static 'img/pf_byun.jpg' %}" alt="" align="left">
-            <h3>변 영 철 교 수 님</h3><br>
-            <p>머신러닝 연구실(D407)</p>
-            <ul>
-              <li><a class="link" href="">꿀팁</a></li>
-              <li><a class="link" href="">레포트</a></li>
-            </ul>
-        </div>
-        <div class="info">
-             <img src="{% static 'img/pf_skim.jpg' %}" alt="" align="left">
-             <h3>김 도 현 교 수 님</h3><br>
-             <p>모바일컴퓨팅 연구실(D409)</p>
-             <ul>
-               <li><a class="link" href="">꿀팁</a></li>
-               <li><a class="link" href="">레포트</a></li>
-             </ul>
+          <img src="{% static 'img/gyeongha.jpg' %}" alt="" align="left">
+          <div class="content">
+            <h3>임 경 하</h3>
+            <p>학    번 : 2015108</p>
+            <p>e-mail : sk85143980@gmail.com</p>
+            <p>자기소개 : 안녕하세욤 (*ﾟ▽ﾟ*)</p>
+          </div>
         </div>
     {% endblock %}
     </div>

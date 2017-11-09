@@ -29,39 +29,23 @@
   margin : 10px;
 }
 
-.lab-content-first, .lab-content-third {
+.lab-content-first, .lab-content-second {
   line-height: 30px;
 }
 
-.lab-content-first h2 {
+.lab-content-first h2, .lab-content-second h2 {
   color : orange;
 }
 
 .lab-content-second {
+  margin-top: 10px;
+}
+
+.lab-location {
   display: flex;
-  flex-flow: row;
-  height: 300px;
-  margin: 10px 5%;
+  height: 270px;
   border: 1px solid #eaeaea;
-  padding : 5px 20px;
   border-radius: 20px;
-}
-
-.professor, .lab-part {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 300px;
-}
-
-
-.professor, .lab-part p {
-  font-weight: bold;
-  font-size: 22px;
-}
-
-.part {
-  list-style-type: none;
+  background-image: url("http://wcms.jejunu.ac.kr/storages/20070209201620806914/20070219185959656399/map2016.jpg");
+  background-size: 100% 100%;
 }
