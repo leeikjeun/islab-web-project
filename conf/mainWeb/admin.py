@@ -11,8 +11,8 @@ class DateInput(forms.DateInput):
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+    password1 = forms.CharField(label='비밀번호', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='비밀번호 확인', widget=forms.PasswordInput)
 
 
     class Meta:
@@ -20,6 +20,12 @@ class UserCreationForm(forms.ModelForm):
         fields = ('email', 'date_of_birth','user_name','userImg')
         widgets = {
             'date_of_birth': DateInput()
+        }
+        labels = {
+        'email' : "이메일",
+        'date_of_birth' : "생일",
+        'user_name' : "이름",
+        'userImg': "너님사진",
         }
 
     def clean_password2(self):
