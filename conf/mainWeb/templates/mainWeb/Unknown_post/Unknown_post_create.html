@@ -3,7 +3,7 @@
 {% block content %}
     <form action="{% url 'unknown_post_create' %}" method="post">
       {% csrf_token %}
-      {{form}}
+      {{ form }}
       <button type="submit" name="button">업로드</button>
     </form>
 {% endblock %}

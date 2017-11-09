@@ -9,12 +9,6 @@ class UnknownBoardCreationForm(forms.ModelForm):
         widgets = {
         'password': forms.PasswordInput(),
         }
-        labels = {
-            "title": "제목",
-            "makerUser" : "별명",
-            "content" : "내용",
-            "password" : "비밀번호"
-        }
 
 class UnknowCommnetCreationForm(forms.ModelForm):
 

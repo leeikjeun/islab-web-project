@@ -21,12 +21,6 @@ class UserCreationForm(forms.ModelForm):
         widgets = {
             'date_of_birth': DateInput()
         }
-        labels = {
-        'email' : "이메일",
-        'date_of_birth' : "생일",
-        'user_name' : "이름",
-        'userImg': "너님사진",
-        }
 
     def clean_password2(self):
         # Check that the two password entries match
