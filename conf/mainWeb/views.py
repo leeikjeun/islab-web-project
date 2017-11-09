@@ -1,7 +1,7 @@
 from django.shortcuts import render ,redirect
 from .admin import UserCreationForm
 from .forms import UnknownBoardCreationForm, MessageCreationFrom
-from .models import UnknownBoard, GGulTipBoard, ReportBoard, MyUser
+from .models import UnknownBoard, GGulTipBoard, ReportBoard, MyUser, Message
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
@@ -43,6 +43,8 @@ def unknown_post_create(request):
 
 def unknown_post_detail(request, pk):
     board = UnknownBoard.objects.get(id=pk)
+    board.hit_count += 1;
+    board.save();
     return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {"board":board})
 
 def profe_info(request):
@@ -51,16 +53,6 @@ def profe_info(request):
 def ggul_tip(request, pr):
     boards = GGulTipBoard.objects.all().filter(professor=pr)
     return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {'boards' : boards})
-
-def ggul_tip_create(request):
-    if request.method == 'POST':
-        form = GGulTipBoardCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/ggultip')
-    else:
-        form = UnknownBoardCreationForm()
-    return render(request, 'mainWeb/Profe_info/GGul_tip/ggul_tip_create.html', {'form':form})
 
 def jokbo(request):
     return render(request, 'mainWeb/Profe_info/jokbo/jokbo.html', {})
@@ -85,13 +77,16 @@ def signUp(request):
     return render(request, 'mainWeb/kind_of_sign/sign_up.html', {'form': form})
 
 def message(request):
-    userList = MyUser.objects.all()
+
     if request.method == 'POST':
-        form = MessageCreationFrom(request.POST)
-        # if form.is_valid():
-        #     form.save()
-        #     return redirect('/')
+        user = MyUser.objects.all(name=request.POST['senderUser'])
+        massage = Message(title = requese.POST['title'], content = requese.POST['title'], senderUser=request.user.username)
+        massage.save()
+        user.messages_set.add(massage)
+
+        return redirect('/')
+
     else:
         form = MessageCreationFrom()
-
+        userList = MyUser.objects.all()
     return render(request, 'mainWeb/message.html', {'form': form, 'users': userList})
