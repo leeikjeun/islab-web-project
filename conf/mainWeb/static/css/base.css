@@ -177,30 +177,38 @@ aside > div#loginForm > dl.user_info > dd.user_photo > span {
 aside > div#loginForm > dl.user_info > dd.user_photo > span > img {
 
 }
-nav dl{
-    padding: 3rem 1.5rem;
-    text-align: center;
+nav > ul{
+  padding: 4rem 0;
 }
-dt > a{
-  font-size: 1.5rem;
-}
-nav dd > a{
-  color: #8C8C8C;
-  font-size: 1.2rem;
-}
-
-dt > a:hover{
-  text-decoration: none;
+nav > ul > li > a{
+  color: #5d5d5d;
   font-weight: bold;
 }
-nav dd > a:hover{
-  font-weight: bold;
+nav > ul > li > a:hover{
   text-decoration: none;
   color: #EDD200;
+  font-weight: bold;
 }
-
+.submenu{
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ccc;
+}
 .submenu-item{
-  height: 0px;
+  height: 0;
   overflow: hidden;
-  transition: all 2s  ;
+
+
+}
+.test{
+  transition: all 2s ease-in;
+}
+.submenu-item a{
+  color: #ccc;
+  font-size: 1.25rem;
+}
+.submenu-item a:hover{
+    text-decoration: none;
+    color: #EDD200;
+    font-weight: bold;
 }
