@@ -29,8 +29,25 @@
   margin : 10px;
 }
 
-.profe-intro h2 {
-  color: orange;
+.toggle_button {
+    cursor:pointer;
+    display:block;
+    background-color: white;
+    color: orange;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#toggle_button,
+#toggle_contents {
+    height:0;
+    overflow:hidden;
+    position:absolute;
+}
+#toggle_button:checked + #toggle_contents {
+    height:auto;
+    position:relative;
+    padding:10px;
 }
 
 .profe-explain {
