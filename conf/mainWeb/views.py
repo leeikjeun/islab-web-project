@@ -8,13 +8,13 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def index(request):
     return render(request, 'mainWeb/index.html', {})
 
-def Lab_intro(request):
+def lab_intro(request):
     return render(request, 'mainWeb/Lab_intro/Lab_intro.html', {})
 
-def Profe_intro(request):
+def profe_intro(request):
     return render(request, 'mainWeb/Profe_intro/profe_intro.html', {})
 
-def Unknown_post(request):
+def unknown_post(request):
     unKnowBoard = UnknownBoard.objects.all()
     paginator = Paginator(unKnowBoard, 10) # Show 25 contacts per page
 
@@ -31,7 +31,7 @@ def Unknown_post(request):
 
     return render(request, 'mainWeb/Unknown_post/Unknown_post.html', {'boards' : unKnowBoard})
 
-def Unknown_post_create(request):
+def unknown_post_create(request):
     if request.method == 'POST':
         form = UnknownBoardCreationForm(request.POST)
         if form.is_valid():
@@ -42,13 +42,13 @@ def Unknown_post_create(request):
 
     return render(request, 'mainWeb/Unknown_post/Unknown_post_create.html', {'form':form})
 
-def Unknown_post_detail(request):
+def unknown_post_detail(request):
     return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {})
 
-def Profe_info(request):
+def profe_info(request):
     return render(request, 'mainWeb/Profe_info/Profe_info.html', {})
 
-def GGul_tip(request):
+def ggul_tip(request):
     return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {})
 
 def jokbo(request):

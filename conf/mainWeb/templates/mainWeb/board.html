@@ -24,7 +24,7 @@
         }
         table th.title {
         color: #fff;
-        width: 70%;
+        width: 60%;
         padding: 10px;
         font-weight: bold;
         vertical-align: top;
@@ -39,6 +39,14 @@
         border: 1px solid #ccc;
         }
         table th.hit {
+        color: #fff;
+        width: 10%;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        border: 1px solid #ccc;
+        }
+        table th.date {
         color: #fff;
         width: 10%;
         padding: 10px;
@@ -95,6 +103,9 @@
             top:1px;
         }
 
+        div.pagination{
+          text-align: center;
+        }
     </style>
 {% endblock %}
 
@@ -113,6 +124,7 @@
             <th class="title">제목</th>
             <th class="name">작성자</th>
             <th class="hit">hit</th>
+            <th class="date">날짜</th>
           </tr>
         </thead>
 
@@ -124,15 +136,6 @@
 
     </table>
     </ul>
-{#    페이지 네이션 뿌릴 곳#}
-    <div>
-        페이지네이션
-        <ul>
-            <li>
-
-            </li>
-        </ul>
-    </div>
 
     <a href="{% url 'unknown_post_create' %}" class="myButton">글쓰기</a>
 
