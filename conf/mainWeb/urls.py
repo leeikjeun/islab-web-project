@@ -15,4 +15,5 @@ urlpatterns = [
     url(r'^report/$', views.report, name='report'),
     url(r'^mypage/$', views.mypage, name='mypage'),
     url(r'^signup/$', views.signUp, name='signup'),
+    url(r'^lab_member/$', views.lab_member, name='lab_member')
 ]

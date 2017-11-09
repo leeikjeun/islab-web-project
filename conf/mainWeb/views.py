@@ -60,6 +60,9 @@ def report(request):
 def mypage(request):
     return render(request, 'mainWeb/mypage/mypage.html', {})
 
+def lab_member(request):
+    return render(request, 'mainWeb/lab_member/lab_member.html')
+
 def signUp(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST,request.FILES)
