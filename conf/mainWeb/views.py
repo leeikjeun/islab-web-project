@@ -54,13 +54,14 @@ def profe_info(request):
 
 def ggul_tip(request, pr):
     boards = GGulTipBoard.objects.all().filter(professor=pr)
-    return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {'boards' : boards})
+    return render(request, 'mainWeb/Profe_info/' + str(pr) + '/ggul_tip/GGul_tip.html', {'boards' : boards})
 
 def jokbo(request):
     return render(request, 'mainWeb/Profe_info/jokbo/jokbo.html', {})
 
-def report(request):
-    return render(request, 'mainWeb/Profe_info/report/report.html',{})
+def report(request, pr):
+    boards = ReportBoard.objects.all().filter(professor=pr)
+    return render(request, 'mainWeb/Profe_info/' + str(pr) + '/report/report.html',{'boards' : boards})
 
 def mypage(request):
     message = Message.objects.all().filter(receiveUser=request.user.user_name)
