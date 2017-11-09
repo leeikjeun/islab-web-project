@@ -17,7 +17,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = MyUser
-        fields = ('email', 'date_of_birth','user_name','userImg')
+        fields = ('email', 'date_of_birth','user_name','userImg','school_num','phone_num')
         widgets = {
             'date_of_birth': DateInput()
         }

@@ -63,6 +63,7 @@ def report(request):
     return render(request, 'mainWeb/Profe_info/report/report.html',{})
 
 def mypage(request):
+    message = Message.objects.all().filter(receiveUser=request.user.user_name)
     return render(request, 'mainWeb/mypage/mypage.html', {})
 
 def lab_member(request):
