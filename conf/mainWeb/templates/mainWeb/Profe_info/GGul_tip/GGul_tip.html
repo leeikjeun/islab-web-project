@@ -56,63 +56,73 @@ a.link{
   text-align: center;
   border-bottom: 3px solid #000;
 }
-.board_list {
-    clear: both;
-    border-collapse: collapse;
-    border: none 0;
-    border-width: 0 0 1px 0;
-    padding: 0 10px;
-    border-bottom: 1px solid #545861;
-    table-layout: fixed;
-}
-table{
-  display: table;
+.board_list{
   width: 100%;
+  position: relative;
+  /*padding-top:10px;*/
+  /*padding-left: 2rem;
+  padding-right: 2rem;*/
 }
-colgroup{
-  display: table-column-group;
+
+.board_list ul {
+    clear: left;
+    margin: 0;
+    padding :0;
+    list-style-type: none;
+    }
+
+
+.board_list ul.title li {
+      font-weight:bold;
+      text-align:center;
+      background-color: #ccc;
+      color: #fff;
+
 }
-col{
-  display: table-column;
+
+.board_list ul li {
+    float: left;
+    margin: 0;
+    padding: 2px 1px;
+    /*border-bottom: 1px solid #000;*/
+    border-left: 1px solid #fff;
 }
-.board_list thead {
-    border-collapse: collapse;
-    border: none 0;
-    border-width: 0 0 1px 0;
-}
-thead {
-    display: table-header-group;
-    vertical-align: middle;
-  }
-  tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-.board_list thead th {
-    border-collapse: collapse;
-    border: none 0;
-    color: #636363;
-    font-weight: bold;
+
+.board_list ul .col1 {
+  padding-top: 10px;
+    width: 8%;
+    height: 40px;
     text-align: center;
-    padding: 6px 4px;
-    background: #f1f1f1;
-    border-bottom: 1px solid #d7d7d7;
 }
-tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
+
+.board_list ul .col2 {
+  padding-top: 10px;
+  width: 48%;
+  height: 40px;
+  padding-left: 2px;
 }
-.board_list td {
-    border-collapse: collapse;
-    border: none 0;
-    border-width: 0 0 1px 0;
-    padding: 10px 5px;
-    border-bottom: 1px solid #dedede;
-    color: #666666;
-    text-align: center;
-  }
+
+.board_list ul .col3 {
+  padding-top: 10px;
+  width: 15%;
+  height: 40px;
+  text-align: center;
+}
+
+.board_list ul .col4 {
+  padding-top: 10px;
+  width: 15%;
+  height: 40px;
+  text-align: center;
+}
+
+.board_list ul .col5 {
+  padding-top: 10px;
+  width: 14%;
+  height: 40px;
+  border-right: 1px solid #fff;
+  text-align: center;
+}
 </style>
 
 {% endblock %}
@@ -128,34 +138,14 @@ tbody {
           <li><a class="link" href="#">레포트</a></li>
         </ul>
 </div>
-<div>
-  <table class="board_list">
-    <colgroup>
-      <col style ="width: 8%">
-      <col style ="width: 48%">
-      <col style ="width: 15%">
-      <col style ="width: 15%">
-      <col style ="width: 14%">
-    </colgroup>
-    <thead>
-      <th scope="col">No</th>
-      <th scope="col">제목</th>
-      <th scope="col">작성자</th>
-      <th scope="col">등록일</th>
-      <th scope="col">조회</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td class="left"><a href="">화일처리 꿀잼</a></td>
-        <td>경하하하</td>
-        <td>2017.11.10</td>
-        <td>20</td>
-      </tr>
-
-    </tbody>
-
-  </table>
+<div class="board_list">
+  <ul class="title">
+    <li class="col1">No</li>
+    <li class="col2">제목</li>
+    <li class="col3">작성자</li>
+    <li class="col4">등록일</li>
+    <li class="col5">조회</li>
+  </ul>
 </div>
 
 {% endblock %}
