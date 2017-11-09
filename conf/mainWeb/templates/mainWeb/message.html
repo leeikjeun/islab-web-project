@@ -10,8 +10,10 @@
   <form  action="{% url 'message' %}" method="post">
     {% csrf_token %}
     {{ form }}
-    <select name="sendetUser">
-      
+    <select name="receiveUser">
+      {% for user in users %}
+      <option value="{{ user.user_name }}">{{ user.user_name }}</option>
+      {% endfor %}
     </select>
 
     <button class="upload" type="submit" name="button">업로드</button>
