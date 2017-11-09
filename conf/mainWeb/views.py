@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def index(request):
-    return render(request, 'mainWeb/index.html', {})
+    return render(request, 'mainWeb0/index.html', {})
 
 def lab_intro(request):
     return render(request, 'mainWeb/Lab_intro/Lab_intro.html', {})

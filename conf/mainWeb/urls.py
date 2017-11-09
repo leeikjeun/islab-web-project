@@ -4,7 +4,7 @@ from . import professor
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^labintro/$', views.lab_intro, name='Lab_intro'),
+    url(r'^labintro0/$', views.lab_intro, name='Lab_intro'),
     url(r'^profeintro/$', views.profe_intro, name='Profe_intro'),
     url(r'^unknownpost/$', views.unknown_post, name='Unknown_post'),
     url(r'^unknownpostcreate/$', views.unknown_post_create, name='unknown_post_create'),
