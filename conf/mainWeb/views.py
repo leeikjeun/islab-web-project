@@ -49,11 +49,7 @@ def profe_info(request):
     return render(request, 'mainWeb/Profe_intro/Profe_info.html', {})
 
 def ggul_tip(request, pr):
-
-    try:
-        boards = GGulTipBoard.objects.get(professor=pr)
-    except : DoesNotExist
-
+    boards = GGulTipBoard.objects.all().filter(professor=pr)
     return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {'boards' : boards})
 
 def jokbo(request):
