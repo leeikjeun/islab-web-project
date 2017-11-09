@@ -45,7 +45,7 @@ class MyUser(AbstractBaseUser):
         unique=True,
     )
     date_of_birth = models.DateField()
-    user_name = models.CharField(max_length=50, blank=False, null=False, default="customer")
+    user_name = models.CharField(max_length=50, blank=False, null=False, default="")
     is_authority = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)

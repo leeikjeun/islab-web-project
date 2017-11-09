@@ -14,11 +14,7 @@
 <form action="{% url 'signup' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
-    <div class="">
-      {{ form.email }}
-    </div>
-
-    {{ form.date_of_birth }}
+    {{form}}
 
     <input type="submit" value="Submit" />
 </form>

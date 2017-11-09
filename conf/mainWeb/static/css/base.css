@@ -198,3 +198,9 @@ nav dd > a:hover{
   text-decoration: none;
   color: #EDD200;
 }
+
+.submenu-item{
+  height: 0px;
+  overflow: hidden;
+  transition: all 2s  ;
+}

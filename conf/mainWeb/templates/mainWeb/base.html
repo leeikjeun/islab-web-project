@@ -74,19 +74,19 @@
           <!--menu-->
           <dl>
               <dt class="submenu"><a href="{% url 'Profe_intro' %}">교수님 소개</a></dt>
-              <dt class="submenu"><a href="{% url 'Lab_intro' %}">연구실 소개</a>
-                  <dd><a href="{% url 'lab_member' %}">연구원 소개</a></dd>
+              <dt class="submenu lab_info"><a href="{% url 'Lab_intro' %}">연구실 소개</a>
+                  <dd class="lab_info_submenu-item submenu-item"><a href="{% url 'lab_member' %}">연구원 소개</a></dd>
               </dt>
-              <dt class="submenu"><a href="{% url 'Profe_info' %}">정보 나눔터</a>
+              <dt class="submenu info_share"><a href="{% url 'Profe_info' %}">정보 나눔터</a>
                       <!--submenu-->
-                  <dd><a href="#">이상준교수님</a></dd>
-                  <dd><a href="#">김장형교수님</a></dd>
-                  <dd><a href="#">안기중교수님</a></dd>
-                  <dd><a href="#">변상용교수님</a></dd>
-                  <dd><a href="#">곽호영교수님</a></dd>
-                  <dd><a href="#">송왕철교수님</a></dd>
-                  <dd><a href="#">변영철교수님</a></dd>
-                  <dd><a href="#">김도현교수님</a></dd>
+                  <dd class="submenu-item info_share_submenu-item"><a href="#">이상준교수님</a></dd>
+                  <dd class="submenu-item info_share_submenu-item"><a href="#">김장형교수님</a></dd>
+                  <dd class="submenu-item info_share_submenu-item"><a href="#">안기중교수님</a></dd>
+                  <dd class="submenu-item info_share_submenu-item"><a href="#">변상용교수님</a></dd>
+                  <dd class="submenu-item info_share_submenu-item"><a href="#">곽호영교수님</a></dd>
+                  <dd class="submenu-item info_share_submenu-item"><a href="#">송왕철교수님</a></dd>
+                  <dd class="submenu-item info_share_submenu-item"><a href="#">변영철교수님</a></dd>
+                  <dd class="submenu-item info_share_submenu-item"><a href="#">김도현교수님</a></dd>
               </dt>
               <dt class="submenu"><a href="{% url 'Unknown_post'%}">익명 게시판</a></dt>
           </dl>
@@ -97,6 +97,46 @@
       {% block content %}
       {% endblock %}
   </div>
+  <script type="text/javascript">
+    // var labInfo = document.querySelector('.lab_info');
+    // var infoShare = document.querySelector('.info_share');
+    //
+    // var labInfoSubItems = document.querySelectorAll('.lab_info_submenu-item');
+    // var infoShareItems = document.querySelectorAll('.info_share_submenu-item');
+    //
+    // labInfo.addEventListener('mouseover',function(e){
+    //
+    //   for(var i = 0; i < labInfoSubItems.length; i++){
+    //     labInfoSubItems[i].style.height = "auto"
+    //   }
+    //
+    //     labInfo.addEventListener('mouseout',showOutItems);
+    // },false);
+    //
+    // infoShare.addEventListener('mouseover',function(e){
+    //
+    //   for(var i = 0; i < infoShareItems.length; i++){
+    //     infoShareItems[i].style.height = "auto"
+    //   }
+    //
+    //     infoShare.addEventListener('mouseout',showOutItemsP);
+    // });
+    //
+    // function showOutItems(e){
+    //   for(var i = 0; i < labInfoSubItems.length; i++){
+    //     labInfoSubItems[i].style.height = "0px"
+    //   }
+    // }
+    //
+    // function showOutItemsP(e){
+    //   for(var i = 0; i < infoShareItems.length; i++){
+    //     infoShareItems[i].style.height = "0px"
+    //   }
+    // }
+    //
+
+
+  </script>
 </div>
 </body>
 </html>
