@@ -47,7 +47,7 @@ def unknown_post_detail(request, pk):
     return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {})
 
 def profe_info(request):
-    return render(request, 'mainWeb/Profe_info/Profe_info.html', {})
+    return render(request, 'mainWeb/Profe_intro/Profe_info.html', {})
 
 def ggul_tip(request):
     return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {})
