@@ -3,7 +3,7 @@ from .admin import UserCreationForm
 from .forms import UnknownBoardCreationForm, MessageCreationFrom
 from .models import UnknownBoard, GGulTipBoard, ReportBoard, MyUser, Message
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from django.http import HttpResponse
 # Create your views here.
 def index(request):
     return render(request, 'mainWeb/index.html', {})
@@ -126,7 +126,7 @@ def message(request):
                         senderUser= request.user.user_name,
                         receiveUser=request.POST['receiveUser'])
         massage.save()
-        return redirect('/')
+        return HttpResponse('<script type="text/javascript">window.close();</script>')
 
     else:
         form = MessageCreationFrom()
