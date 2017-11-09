@@ -1,15 +1,15 @@
-{% extends 'mainWeb/board.html' %}
-
-{% block category %}
-    <h2>꿀팁</h2>
+{% extends 'mainWeb/base.html' %}
+{% block head%}
 
 {% endblock %}
-
-{% block list %}
-    <tr>
-        <td>1</td>
-        <td>1번 글입니다.</td>
-        <td>지원</td>
-        <td>123</td>
-    </tr>
+{% block content %}
+<div class="info">
+        <img src="{% static 'img/Professor.jpg' %}" alt="" align="left">
+        <h3>이 상 준 교 수 님</h3><br>
+        <p>지능형시스템 연구실(D425)</p>
+        <ul>
+          <li><a class="link" href="">꿀팁</a></li>
+          <li><a class="link" href="">레포트</a></li>
+        </ul>
+</div>
 {% endblock %}
