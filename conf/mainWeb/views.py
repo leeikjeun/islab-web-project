@@ -87,6 +87,14 @@ def report(request, pr):
 
     return render(request, 'mainWeb/Profe_info/' + str(pr) + '/report/report.html',{'boards' : boards})
 
+def ggulTipDetail(request,pr, pk):
+    board = ReportBoard.objects.get(id=pk)
+    return render(request, 'mainWeb/Profe_info/' + str(pr) + '/ggul_tip/GGul_tip_detail.html', {'board' : boards})
+
+def reportDetail(request,pr, pk):
+    board = ReportBoard.objects.get(id=pk)
+    return render(request, 'mainWeb/Profe_info/' + str(pr) + '/report/GGul_tip_detail.html', {'board' : boards})
+
 def mypage(request):
     messages = Message.objects.all().filter(receiveUser=request.user.user_name)
 
