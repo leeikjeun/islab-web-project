@@ -76,8 +76,6 @@ class MyUser(AbstractBaseUser):
         # Simplest possible answer: All admins are staff
         return self.is_admin
 
-
-
 class UnknownBoard(models.Model):
     title = models.CharField(max_length=50, blank=True, null=False)
     makerUser = models.CharField(max_length=50, blank=True, null=False)
@@ -86,9 +84,26 @@ class UnknownBoard(models.Model):
     content = models.TextField(blank=False)
     hit_count = models.IntegerField(default=0)
 
-
 class UnknowCommnet(models.Model):
-    board = models.ForeignKey(UnknownBoard, on_delete=models.CASCADE)
     user = models.CharField(max_length=50, blank=True, null=False)
     content = models.CharField(max_length=100, blank=True, null=False)
     created_date = models.DateField(auto_now_add=True, null=False)
+
+
+class GGulTipBoard(models.Model):
+    title = models.CharField(max_length=50, blank=True, null=False)
+    user = models.CharField(max_length=50, blank=True, null=False)
+    created_date = models.DateField(auto_now_add=True, null=False)
+    content = models.TextField(blank=False)
+    fileContent = models.FileField(upload_to = 'boardFile/%m/%d', default=None, blank=True, null=True);
+    professor = models.CharField(max_length=50, blank=True, null=False)
+    hit_count = models.IntegerField(default=0)
+
+class ReportBoard(models.Model):
+    title = models.CharField(max_length=50, blank=True, null=False)
+    user = models.CharField(max_length=50, blank=True, null=False)
+    created_date = models.DateField(auto_now_add=True, null=False)
+    content = models.TextField(blank=False)
+    fileContent = models.FileField(upload_to = 'boardFile/%m/%d', default=None, blank=True, null=True);
+    professor = models.CharField(max_length=50, blank=True, null=False)
+    hit_count = models.IntegerField(default=0)

@@ -1,7 +1,7 @@
 from django.shortcuts import render ,redirect
 from .admin import UserCreationForm
 from .forms import UnknownBoardCreationForm
-from .models import UnknownBoard
+from .models import UnknownBoard, GGulTipBoard, ReportBoard
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
@@ -19,7 +19,6 @@ def unknown_post(request):
     paginator = Paginator(unKnowBoard, 10) # Show 25 contacts per page
 
     page = request.GET.get('page')
-
     try:
         unKnowBoard = paginator.page(page)
     except PageNotAnInteger:
@@ -43,14 +42,15 @@ def unknown_post_create(request):
     return render(request, 'mainWeb/Unknown_post/Unknown_post_create.html', {'form':form})
 
 def unknown_post_detail(request, pk):
-    print(pk)
-    return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {})
+    board = UnknownBoard.objects.get(id=pk)
+    return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {"board":board})
 
 def profe_info(request):
-    return render(request, 'mainWeb/Profe_intro/Profe_info.html', {})
+    return render(request, 'mainWeb/Profe_info/Profe_info.html', {})
 
-def ggul_tip(request):
-    return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {})
+def ggul_tip(request, pr):
+    boards = GGulTipBoard.objects.get(name=pr)
+    return render(request, 'mainWeb/Profe_info/GGul_tip/GGul_tip.html', {'boards' : boards})
 
 def jokbo(request):
     return render(request, 'mainWeb/Profe_info/jokbo/jokbo.html', {})

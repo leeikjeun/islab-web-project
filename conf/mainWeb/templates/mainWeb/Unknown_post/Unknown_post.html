@@ -152,7 +152,7 @@
 
         {% for board in boards %}
         <ul>
-          <a href="#">
+          <a href="{% url 'Unknown_post_detail' pk=board.id %}">
             <li class="column1">{{ board.id }}</li>
             <li class="column2">{{ board.title }}</li>
             <li class="column3">{{ board.makerUser }}</li>
