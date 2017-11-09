@@ -4,11 +4,11 @@
 
     {% for board in boards %}
     <tr>
-      <td>{{ board.id }}</td>
-      <td>{{ board.title }}</td>
-      <td>{{ board.makerUser }}</td>
-      <td>{{ board.hit_count }}</td>
-      <td>{{ board.created_date }}</td>
+      <td><a href="#">{{ board.id }}</a></td>
+      <td><a href="#">{{ board.title }}</a></td>
+      <td><a href="#">{{ board.makerUser }}</a></td>
+      <td><a href="#">{{ board.hit_count }}</a></td>
+      <td><a href="#">{{ board.created_date }}</a></td>
     </tr>
     {% endfor %}
 
