@@ -24,13 +24,13 @@ class GGulTipBoardCreationForm(forms.ModelForm):
 
     class Meta:
         model = GGulTipBoard
-        fields = ('title', 'user','content','fileContent')
+        fields = ('title','content','fileContent')
 
 class ReportBoardCreationFrom(forms.ModelForm):
 
     class Meta:
         model = ReportBoard
-        fields = ('title', 'user','content','fileContent')
+        fields = ('title','content','fileContent')
 
 class MessageCreationFrom(forms.ModelForm):
 

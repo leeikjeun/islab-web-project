@@ -1,6 +1,6 @@
 from django.shortcuts import render ,redirect
 from .admin import UserCreationForm
-from .forms import UnknownBoardCreationForm, MessageCreationFrom
+from .forms import UnknownBoardCreationForm, MessageCreationFrom, GGulTipBoardCreationForm, ReportBoardCreationFrom
 from .models import UnknownBoard, GGulTipBoard, ReportBoard, MyUser, Message
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
@@ -94,6 +94,16 @@ def ggulTipDetail(request,pr, pk):
 def reportDetail(request,pr, pk):
     board = ReportBoard.objects.get(id=pk)
     return render(request, 'mainWeb/Profe_info/' + str(pr) + '/report/GGul_tip_detail.html', {'board' : boards})
+
+def ggulTipCreate(request,pr=None):
+
+
+
+        form = GGulTipBoardCreationForm()
+    return render(request, '')
+
+def reportCreate(request):
+
 
 def mypage(request):
     messages = Message.objects.all().filter(receiveUser=request.user.user_name)
