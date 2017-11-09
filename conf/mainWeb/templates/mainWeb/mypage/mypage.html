@@ -123,22 +123,22 @@
         </div>
         <div class="table-wrapper">
           <table class="type05">
-              <tr>
-                <th class>이름</th>
-                <td>허지원</td>
-              </tr>
-              <tr>
-                <th>이메일</th>
-                <td>llkjop24@gmail.com</td>
-              </tr>
-              <tr>
-                <th>전화번호</th>
-                <td>01028889433</td>
-              </tr>
-              <tr>
-                <th>학번</th>
-                <td>13학번</td>
-              </tr>
+            <tr>
+              <th class>이름</th>
+              <td>{{ user.user_name }}</td>
+            </tr>
+            <tr>
+              <th>이메일</th>
+              <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+              <th>전화번호</th>
+              <td>{{ user.phone_num }}</td>
+            </tr>
+            <tr>
+              <th>학번</th>
+              <td>{{ user.school_num }}</td>
+            </tr>
           </table>
           <a class="Modify" href="#">회원정보수정</a>
         </div>
@@ -155,6 +155,7 @@
               </ul>
           </div>
           <div class="my-page-table-body">
+              {% for message in messages %}
               <ul>
                 <li>{{ message.title }}</li>
                 <li>{{ message.content }}</li>
@@ -162,7 +163,24 @@
                 <li>{{ message.senderUser }}</li>
                 <li>{{ message.recieveUser }}</li>
               </ul>
+              {% endfor %}
           </div>
+      </div>
+
+      <div class="pagination">
+      <span class="step-links">
+          {% if messages.has_previous %}
+              <a href="?page={{ messages.previous_page_number }}">previous</a>
+          {% endif %}
+
+          <span class="current">
+              Page {{ messages.number }} of {{ messages.paginator.num_pages }}.
+          </span>
+
+          {% if messages.has_next %}
+              <a href="?page={{ messages.next_page_number }}">next</a>
+          {% endif %}
+        </span>
       </div>
 
 {% endblock %}

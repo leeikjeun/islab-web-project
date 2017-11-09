@@ -88,8 +88,21 @@ def report(request, pr):
     return render(request, 'mainWeb/Profe_info/' + str(pr) + '/report/report.html',{'boards' : boards})
 
 def mypage(request):
-    message = Message.objects.all().filter(receiveUser=request.user.user_name)
-    return render(request, 'mainWeb/mypage/mypage.html', {})
+    messages = Message.objects.all().filter(receiveUser=request.user.user_name)
+
+    paginator = Paginator(messages, 10) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        messages = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        messages = paginator.page(1)
+    except EmptyPage:
+    # If page is out of range (e.g. 9999), deliver last page of results.
+        messages = paginator.page(paginator.num_pages)
+
+    return render(request, 'mainWeb/mypage/mypage.html', {'messages': messages})
 
 def lab_member(request):
     return render(request, 'mainWeb/lab_member/lab_member.html')
@@ -112,7 +125,7 @@ def message(request):
                         content = request.POST['title'],
                         senderUser= request.user.user_name,
                         receiveUser=request.POST['receiveUser'])
-
+        massage.save()
         return redirect('/')
 
     else:
