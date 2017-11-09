@@ -97,12 +97,29 @@ def reportDetail(request,pr, pk):
 
 def ggulTipCreate(request,pr=None):
 
-
-
+    if request.method == 'POST':
+        GGulTipBoard.create(title=request.POST['title'],
+                            user=request.user.user_name,
+                            content=request.POST['content'],
+                            fileContent=request.FILES['fileContent']
+                            )
+        return redirect('/')
+    else:
         form = GGulTipBoardCreationForm()
-    return render(request, '')
+    return render(request, 'mainWeb/profe_info/'+ str(pr) +'/ggul_tip/ggul_tip_create.html', {'form': form})
 
 def reportCreate(request):
+    if request.method == 'POST':
+        GGulTipBoard.create(title=request.POST['title'],
+                        user=request.user.user_name,
+                        content=request.POST['content'],
+                        fileContent=request.FILES['fileContent']
+                        )
+        return redirect('/')
+    else:
+        form = ReportBoardCreationFrom()
+
+    return render(request, 'mainWeb/profe_info/'+ str(pr) +'/report/report_create.html', {'form': form})
 
 
 def mypage(request):

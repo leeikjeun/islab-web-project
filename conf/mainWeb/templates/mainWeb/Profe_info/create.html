@@ -71,7 +71,7 @@
 
 {% block content %}
   <h2>게시글 작성</h2>
-    <form action="{% url 'ggul_tip_create' %}" method="post">
+    <form action="{% url 'ggul_tip_create' %}" method="post" enctype="multipart/form-data">
       {% csrf_token %}
   <div class="wrapper">
     <div class="title">
