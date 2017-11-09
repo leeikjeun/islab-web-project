@@ -42,7 +42,8 @@ def unknown_post_create(request):
 
     return render(request, 'mainWeb/Unknown_post/Unknown_post_create.html', {'form':form})
 
-def unknown_post_detail(request):
+def unknown_post_detail(request, pk):
+    print(pk)
     return render(request, 'mainWeb/Unknown_post/Unknown_post_detail.html', {})
 
 def profe_info(request):
