@@ -1,0 +1,115 @@
+{% extends 'mainWeb/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<style media="screen">
+  div.sub_content_title{
+    margin-top: 10rem;
+    margin-left: 20px;
+    margin-right: 20px;
+
+  }
+  div.post {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  div.date{
+    margin: 10px;
+  }
+
+  h1.title{
+    padding: 20px;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+  }
+
+  p.content{
+    width: 100%;
+    height: 300px;
+    padding-top: 10px;
+    border-bottom: 1px solid grey;
+  }
+
+  div.button{
+    text-align: right;
+    margin-top: 10px;
+  }
+
+  .myButton {
+	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+	background-color:#768d87;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+	background-color:#6c7c7c;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+</style>
+{% endblock%}
+
+{% block content %}
+    <div class="sub_content_title">
+      <h2> 레포트</h2>
+    </div>
+
+    <div class="post">
+            <div class="date">
+                {{ post.date }}2017.11.25
+            </div>
+        <h1 class="title">{{ post.title }}제목</h1>
+        <a href="#"></a>
+        <p class="content">{{ post.content|linebreaksbr }}그런 사람이 있다.
+
+          2015년인가, 사진을 찍으러 포이동 재건마을에 갔을 때였다. 포이동, 요즘 이름으론 서울 강남구 개포동 한복판에 있는 외딴 판자촌. 국가의 집단 강제 이주로 만들어졌지만 지금은 강제 철거되지 않을까 밤잠 설치는 그곳. 나는 몇 차례 안면이 있는 주민 아저씨 한 분께 무심코 강제 이주되기 이전의 삶을 물었었다. 그랬더니 아저씨 표정이 싹 변했다.
+
+          "그 얘긴 하고 싶지 않어."
+
+          그땐 기자도 아니었고 그냥 궁금해서 던진 질문이었지만 어딘가 가늠하기 힘든 아저씨의 상처와 주름에 난 아무것도 더 물어볼 수 없었다. 그는 사람도, 국가도, '이놈의 세상'도, 아무것도 믿지 않는다고 했다. 체념한 사람들에게서 나는 특유의 냄새.
+
+          그런 사람
+        </p>
+        <p>파일 링크 : <a href="http://cfile10.uf.tistory.com/image/231A41425342A02408330A">http://cfile10.uf.tistory.com/image/231A41425342A02408330A</a></p>
+        <div class="button">
+          <h3><a href="#" class="myButton"> 수정 </a>  /  <a href="#" class="myButton"> 삭제 </a></h3>
+        </div>
+    </div>
+
+
+
+{% endblock %}
