@@ -111,7 +111,8 @@
      labInfo.addEventListener('mouseover',function(e){
 
        for(var i = 0; i < labInfoSubItems.length; i++){
-         labInfoSubItems[i].style.height = "auto"
+         labInfoSubItems[i].style.transition = "all 0.5s ease-in";
+         labInfoSubItems[i].style.height = "26px"
        }
 
          labInfo.addEventListener('mouseout',showOutItems);
@@ -120,7 +121,8 @@
      infoShare.addEventListener('mouseover',function(e){
 
        for(var i = 0; i < infoShareItems.length; i++){
-         infoShareItems[i].style.height = "auto"
+         infoShareItems[i].style.transition = "all 0.5s ease-in";
+         infoShareItems[i].style.height = "26px"
        }
 
          infoShare.addEventListener('mouseout',showOutItemsP);
