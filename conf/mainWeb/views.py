@@ -54,6 +54,18 @@ def profe_info(request):
 
 def ggul_tip(request, pr):
     boards = GGulTipBoard.objects.all().filter(professor=pr)
+    paginator = Paginator(boards, 10) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        boards = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        boards = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        boards = paginator.page(paginator.num_pages)
+
     return render(request, 'mainWeb/Profe_info/' + str(pr) + '/ggul_tip/GGul_tip.html', {'boards' : boards})
 
 def jokbo(request):
@@ -61,6 +73,18 @@ def jokbo(request):
 
 def report(request, pr):
     boards = ReportBoard.objects.all().filter(professor=pr)
+    paginator = Paginator(boards, 10) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        boards = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        boards = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        boards = paginator.page(paginator.num_pages)
+
     return render(request, 'mainWeb/Profe_info/' + str(pr) + '/report/report.html',{'boards' : boards})
 
 def mypage(request):
