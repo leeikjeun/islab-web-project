@@ -1,17 +1,75 @@
-{% extends 'mainWeb/base.html' %}
+{% extends 'mainWeb/GGul_tip.html' %}
 {% load staticfiles %}
 {% block head%}
-
+<style>
+.board_list {
+    clear: both;
+    border-collapse: collapse;
+    border: none 0;
+    border-width: 0 0 1px 0;
+    padding: 0 10px;
+    border-bottom: 1px solid #545861;
+    table-layout: fixed;
+}
+table{
+  display: table;
+  width: 100%;
+}
+colgroup{
+  display: table-column-group;
+}
+col{
+  display: table-column;
+}
+.board_list thead {
+    border-collapse: collapse;
+    border: none 0;
+    border-width: 0 0 1px 0;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+  }
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.board_list thead th {
+    border-collapse: collapse;
+    border: none 0;
+    color: #636363;
+    font-weight: bold;
+    text-align: center;
+    padding: 6px 4px;
+    background: #f1f1f1;
+    border-bottom: 1px solid #d7d7d7;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.board_list td {
+    border-collapse: collapse;
+    border: none 0;
+    border-width: 0 0 1px 0;
+    padding: 10px 5px;
+    border-bottom: 1px solid #dedede;
+    color: #666666;
+    text-align: center;
+  }
+</style>
 {% endblock %}
 {% block content %}
 <div>
   <table class="board_list">
     <colgroup>
-      <col style="8%">
-      <col style="48%">
-      <col style="15%">
-      <col style="15%">
-      <col style="14%">
+      <col style ="width: 8%">
+      <col style ="width: 48%">
+      <col style ="width: 15%">
+      <col style ="width: 15%">
+      <col style ="width: 14%">
     </colgroup>
     <thead>
       <th scope="col">No</th>
@@ -20,6 +78,16 @@
       <th scope="col">등록일</th>
       <th scope="col">조회</th>
     </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="left"><a href="">화일처리 꿀잼</a></td>
+        <td>경하하하</td>
+        <td>2017.11.10</td>
+        <td>20</td>
+      </tr>
+
+    </tbody>
 
   </table>
 </div>
