@@ -1,9 +1,90 @@
 {% extends 'mainWeb/base.html' %}
 
+{% block head %}
+<style media="screen">
+  div.wrapper{
+    margin-left: 6rem;
+    margin-right: 6rem;
+    border: 1px solid black
+  }
+
+  div.wrapper > div{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    border-bottom: 1px solid black;
+  }
+
+  div.title{
+    padding-top: 20px;
+  }
+
+  div.content{
+
+  }
+
+  span.title{
+    padding-right: 20px;
+    font-size: 17px;
+  }
+  span.writer{
+    padding-right: 10px;
+    font-size: 17px;
+  }
+  span.content{
+    padding-right: 20px;
+    font-size: 17px;
+  }
+  span.password{
+    padding-right: 0px;
+    font-size: 17px;
+  }
+
+  div.upload{
+    text-align: center;
+    border-color: white;
+  }
+
+  #id_content{
+    width: 80%;
+  }
+
+  h2{
+    margin-top: 10rem;
+    margin-left: 6rem;
+    margin-bottom: 2.5rem;
+  }
+
+
+
+
+</style>
+{% endblock %}
+
 {% block content %}
+  <h2>게시글 작성</h2>
     <form action="{% url 'unknown_post_create' %}" method="post">
       {% csrf_token %}
-      {{ form. }}
-      <button type="submit" name="button">업로드</button>
+  <div class="wrapper">
+    <div class="title">
+      <span class="title">제목 : </span>{{ form.title }}
+    </div>
+    <div class="writer">
+      <span class="writer">작성자 : </span>{{ form.makerUser}}
+    </div>
+
+    <div class="content">
+      <span class="content">내용 : </span>{{ form.content }}
+    </div>
+    <div class="password">
+      <span class="password">비밀번호 : </span>{{ form.password }}
+    </div>
+    <div class="upload">
+      <button class="upload" type="submit" name="button">업로드</button>
+    </div>
+
+  </div>
+
+
     </form>
 {% endblock %}
