@@ -95,35 +95,6 @@ def reportDetail(request,pr, pk):
     board = ReportBoard.objects.get(id=pk)
     return render(request, 'mainWeb/Profe_info/' + str(pr) + '/report/GGul_tip_detail.html', {'board' : boards})
 
-def ggulTipCreate(request,pr=None):
-
-    if request.method == 'POST':
-        GGulTipBoard.create(title=request.POST['title'],
-                            user=request.user.user_name,
-                            content=request.POST['content'],
-                            fileContent=request.FILES['fileContent'],
-                            professor=request.POST['professor']
-                            )
-        return redirect('/')
-    else:
-        form = GGulTipBoardCreationForm()
-    return render(request, 'mainWeb/profe_info/'+ str(pr) +'/ggul_tip/ggul_tip_create.html', {'form': form})
-
-def reportCreate(request):
-    if request.method == 'POST':
-        GGulTipBoard.create(title=request.POST['title'],
-                        user=request.user.user_name,
-                        content=request.POST['content'],
-                        fileContent=request.FILES['fileContent'],
-                        professor=request.POST['professor']
-                        )
-        return redirect('/')
-    else:
-        form = ReportBoardCreationFrom()
-
-    return render(request, 'mainWeb/profe_info/'+ str(pr) +'/report/report_create.html', {'form': form})
-
-
 def mypage(request):
     messages = Message.objects.all().filter(receiveUser=request.user.user_name)
 
