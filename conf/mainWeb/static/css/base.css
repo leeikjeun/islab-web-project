@@ -181,7 +181,7 @@ aside > div#loginForm > dl.user_info > dd.user_photo > span {
 }
 
 aside > div#loginForm > dl.user_info > dd.user_photo > span > img {
-  width: 95%;
+  width: 65%;
   border-radius: 50%;
 
 }
